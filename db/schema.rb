@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131013034147) do
+ActiveRecord::Schema.define(:version => 20131013091241) do
+
+  create_table "promotions", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "price"
+    t.date     "expiration"
+    t.string   "website"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
