@@ -7,4 +7,12 @@ class Promotion < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
   mount_uploader :qrcode, QrcodeUploader
+
+  validates :title, length: { maximum: 20 }, presence: true
+  validates :description, length: { maximum: 25 }, presence: true
+  validates :price, presence: true
+  validates :expiration, presence: true
+  validates :website, presence: true
+  validates :image, presence: true
+  validates :qrcode, presence: true
 end
