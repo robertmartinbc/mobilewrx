@@ -1,5 +1,7 @@
 Mobilewrx::Application.routes.draw do
 
+  resources :promotions
+
   match "subscriptions" => "home#subscriptions", via: :get
 
   match "promotions" => "home#promotions", via: :get

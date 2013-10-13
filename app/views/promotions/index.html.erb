@@ -1,0 +1,10 @@
+<h1>All Promotions</h1>
+<% @promotions.each do |promotion| %>
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading">
+        <%= link_to promotion.title, promotion %>
+      </h4>
+    </div>
+  </div>
+<% end %>
