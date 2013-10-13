@@ -23,10 +23,12 @@
 		<div class="span3">
 <%= simple_form_for @promotion do |f| %>
 	<p><%= f.input :title, label: false, placeholder: 'Title' %></p>
-	<p><%= f.input :description, input_html: { rows: 2}, label: false, placeholder: 'Enter Brief description: no more than 30 characters' %></p>
+	<p><%= f.input :description, :input_html => { :rows => 2}, label: false, placeholder: 'Enter Brief description: no more than 30 characters' %></p>
 	<p><%= f.input :price, label: false, placeholder: 'Price' %></p>
 	<p><%= f.input :expiration, label: false, placeholder: 'Expiry Date' %></p>
 	<p><%= f.input :website, label: false, placeholder: 'Website' %></p>
+	<p><%= f.file_field :image %><font color="blue">*Upload Image</font></p>
+	<p><%= f.file_field :qrcode %><font color="blue">*Upload QR code</font></p>
 	<br>
 	<p><%= f.submit %></p>
 	<% end %>

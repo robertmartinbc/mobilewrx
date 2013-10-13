@@ -22,14 +22,14 @@
   </div>
   <div class="span3">
     <div class="thumbnail">
-
+       <p><%= image_tag(@promotion.image_url, class: "image-rounded") if @promotion.image? %></p>
       <div class="caption">
         <p><%= @promotion.title %></h3>
         <p align="center"><%= @promotion.description %><pp>
         <p align="center"><%= @promotion.price %></p>
         <p align><%= @promotion.expiration %></p>
         <p align><%= @promotion.website %></p>
-
+        <p align="center"><%= image_tag(@promotion.qrcode_url, class: "image-rounded") if @promotion.qrcode? %></p>
         <p align="center"><a href="#" class="btn btn-primary">Buy</a></p>
       </div>
     </div>

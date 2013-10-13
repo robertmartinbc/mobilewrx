@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131013172454) do
+ActiveRecord::Schema.define(:version => 20131013201135) do
 
   create_table "promotions", :force => true do |t|
     t.string   "title"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(:version => 20131013172454) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "user_id"
+    t.string   "image"
+    t.string   "qrcode"
   end
 
   add_index "promotions", ["user_id"], :name => "index_promotions_on_user_id"
@@ -53,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20131013172454) do
     t.string   "name"
     t.string   "customer_id"
     t.string   "last_4_digits"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

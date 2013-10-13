@@ -27,8 +27,8 @@
 	<p><%= f.input :price, label: false, placeholder: 'Price' %></p>
 	<p><%= f.input :expiration, label: false, placeholder: 'Expiry Date' %></p>
 	<p><%= f.input :website, label: false, placeholder: 'Website' %></p>
-
-
+	<p><%= f.file_field :image %><font color="blue">*Upload Image</font></p>
+	<p><%= f.file_field :qrcode %><font color="blue">*Upload QR code</font></p>
 	<br>
 	<p><%= f.submit %></p>
 	<% end %>
