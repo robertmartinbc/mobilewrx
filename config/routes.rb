@@ -1,4 +1,17 @@
 Mobilewrx::Application.routes.draw do
+
+  match "subscriptions" => "home#subscriptions", via: :get
+
+  match "promotions" => "home#promotions", via: :get
+
+  match "how" => "home#how", via: :get
+
+  match "faq" => "home#faq", via: :get
+
+  match "about" => "home#about", via: :get
+
+  match "contact" => "home#contact", via: :get
+
   mount StripeEvent::Engine => '/stripe'
   get "content/gold"
   get "content/silver"

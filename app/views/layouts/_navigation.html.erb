@@ -1,18 +1,54 @@
-<%= link_to "Rails Stripe Membership Saas", root_path, :class => 'brand' %>
-<ul class="nav">
+<%= link_to "MobileWRX", root_path, :class => 'brand' %>
+<ul class="nav nav-tabs">
   <% if user_signed_in? %>
     <li>
-    <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>        
+    <%= link_to 'Subscriptions', subscriptions_path %>
     </li>
-  <% else %>
     <li>
-    <%= link_to 'Login', new_user_session_path %>  
+    <%= link_to 'Promotions', promotions_path %>
     </li>
-  <% end %>
-  <% if user_signed_in? %>
+    <li>
+    <%= link_to 'How it Wrx', how_path %>
+    </li>
+    <li>
+    <%= link_to 'FAQ', faq_path %>
+    </li>
+    <li>
+    <%= link_to 'About Us', about_path %>
+    </li>
+    <li>
+    <%= link_to 'Contact Us', contact_path %>
+    </li>
     <li>
     <%= link_to 'Edit account', edit_user_registration_path %>
     </li>
+    <li>
+    <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
+    </li>
+  <% else %>
+  <li>
+    <%= link_to 'Subscriptions', subscriptions_path %>
+    </li>
+    <li>
+    <%= link_to 'Promotions', promotions_path %>
+    </li>
+    <li>
+    <%= link_to 'How it WRX', how_path %>
+    </li>
+    <li>
+    <%= link_to 'FAQ', faq_path %>
+    </li>
+    <li>
+    <%= link_to 'About Us', about_path %>
+    </li>
+    <li>
+    <%= link_to 'Contact Us', contact_path %>
+    </li>
+    <li>
+    <%= link_to 'Login', new_user_session_path %>
+    </li>
+  <% end %>
+  <% if user_signed_in? %>
     <% if current_user.has_role? :admin %>
       <li>
       <%= link_to 'Admin', users_path %>
