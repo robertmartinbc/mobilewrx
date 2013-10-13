@@ -1,10 +1,26 @@
-<h1>All Promotions</h1>
+<div>
+<center>
+    <br>
+  <h1><%= image_tag("mobilewrxlogo.jpg") %></h1>
+   <h5>Latest promotions!</h5>
+<br>
+</center>
+<br>
 <% @promotions.each do |promotion| %>
-  <div class="media">
-    <div class="media-body">
-      <h4 class="media-heading">
-        <%= link_to promotion.title, promotion %>
-      </h4>
-    </div>
-  </div>
+<div class="row">
+	<div class="span3">
+		<div class="thumbnail">
+
+			<p align="center"><%= promotion.title %></p>
+			<p align="center"><%= promotion.description %></p>
+			<p align="center"><%= promotion.price %></p>
+			<p align="center"><%= promotion.expiration %></p>
+			<p align="center"><%= link_to promotion.website %></p>
+
+			<p align="center"><a href="#" class="btn btn-mini btn-primary">More</a></p>
+		</div>
+		</div>
+
+
 <% end %>
+</div>

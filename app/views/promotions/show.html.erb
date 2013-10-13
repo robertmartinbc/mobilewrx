@@ -1,2 +1,46 @@
-<h1><%= @promotion.title %></h1>
-<p><%= @promotion.description %></p>
+<center>
+<div class="row">
+  <div class="span3">
+  </div>
+    <div class="span5">
+      <br>
+      <h1><%= image_tag("mobilewrxlogo.jpg") %></h1>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+  <div class="span2">
+  </div>
+    <div class="span7">
+  <h5>Please confirm or edit your promotion:</h5>
+</div>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="span4">
+  </div>
+  <div class="span3">
+    <div class="thumbnail">
+
+      <div class="caption">
+        <p><%= @promotion.title %></h3>
+        <p align="center"><%= @promotion.description %><pp>
+        <p align="center"><%= @promotion.price %></p>
+        <p align><%= @promotion.expiration %></p>
+        <p align><%= @promotion.website %></p>
+
+        <p align="center"><a href="#" class="btn btn-primary">Buy</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="span4">
+  </div>
+  <div class="span3">
+    <br>
+<%= link_to "Edit", edit_promotion_path(@promotion), class: 'btn btn-primary' %>
+<%= link_to "Confirm", promotions_path, class: 'btn btn-primary' %>
+</div>
+</div>

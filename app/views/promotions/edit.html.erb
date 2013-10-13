@@ -1,2 +1,37 @@
-<h1>Promotions#edit</h1>
-<p>Find me in app/views/promotions/edit.html.erb</p>
+<center>
+<div class="row">
+	<div class="span3">
+	</div>
+		<div class="span5">
+    	<br>
+  		<h1><%= image_tag("mobilewrxlogo.jpg") %></h1>
+		</div>
+	</div>
+  <br>
+  <div class="row">
+  <div class="span2">
+  </div>
+  	<div class="span7">
+  <h5>Please make the necessary changes to your promotion:</h5>
+</div>
+</div>
+<br>
+<br>
+<div class="row">
+	<div class="span4">
+	</div>
+		<div class="span3">
+<%= simple_form_for @promotion do |f| %>
+	<p><%= f.input :title, label: false, placeholder: 'Title' %></p>
+	<p><%= f.input :description, :input_html => { :rows => 2}, label: false, placeholder: 'Enter Brief description: no more than 30 characters' %></p>
+	<p><%= f.input :price, label: false, placeholder: 'Price' %></p>
+	<p><%= f.input :expiration, label: false, placeholder: 'Expiry Date' %></p>
+	<p><%= f.input :website, label: false, placeholder: 'Website' %></p>
+
+
+	<br>
+	<p><%= f.submit %></p>
+	<% end %>
+</div>
+</div>
+</div>
