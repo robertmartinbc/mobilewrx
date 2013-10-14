@@ -14,14 +14,14 @@ class ContentController < ApplicationController
   end
 
   def standard
-    # authorize! :view, :standard, :message => 'Access limited to Standard Plan subscribers.'
+    authorize! :view, :standard, :message => 'Access limited to Standard Plan subscribers.'
   end
 
   def premium
-    # authorize! :view, :premium, :message => 'Access limited to Premium Plan subscribers.'
+    authorize! :view, :premium, :message => 'Access limited to Premium Plan subscribers.'
   end
 
   def vip
-    # authorize! :view, :vip, :message => 'Access limited to V.I.P Plan subscribers.'
+    authorize! :view, :vip, :message => 'Access limited to V.I.P Plan subscribers.'
   end
 end

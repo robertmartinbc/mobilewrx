@@ -11,7 +11,7 @@ class Ability
       can :view, :platinum if user.has_role? :platinum
       can :view, :standard if user.has_role? :standard
       can :view, :premium if user.has_role? :premium
-      can :view, :vip, if user.has_role? :vip
+      can :view, :vip if user.has_role? :vip
     end
   end
 end
