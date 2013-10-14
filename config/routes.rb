@@ -20,6 +20,9 @@ Mobilewrx::Application.routes.draw do
   get "content/gold"
   get "content/silver"
   get "content/platinum"
+  get "content/standard"
+  get "content/premium"
+  get "content/vip"
   authenticated :user do
     root :to => 'home#index'
   end

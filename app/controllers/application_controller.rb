@@ -15,9 +15,15 @@ class ApplicationController < ActionController::Base
         content_gold_path
       when 'platinum'
         content_platinum_path
+      when 'standard'
+        content_standard_path
+      when 'premium'
+        content_premium_path
+      when 'vip'
+        content_vip_path
       else
         root_path
     end
   end
-  
+
 end

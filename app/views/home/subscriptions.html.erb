@@ -31,5 +31,32 @@
     <h3>$29/month</h3>
     <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn btn-primary' %>
   </div>
+  <div class="span3 well">
+    <div class="plan"><h2>Standard</h2></div>
+    <ul class="unstyled">
+      <li>Fifteen promotions per month</li>
+      <li>Two FREE promotions</li>
+    </ul>
+    <h3>FREE</h3>
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'standard'), :class => 'btn btn-primary' %>
+  </div>
+  <div class="span3 well">
+    <div class="plan"><h2>Premium</h2></div>
+    <ul class="unstyled">
+      <li>Fifteen promotions per month</li>
+      <li>Two FREE promotions</li>
+    </ul>
+    <h3>$19.99 per month</h3>
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'premium'), :class => 'btn btn-primary' %>
+  </div>
+  <div class="span3 well">
+    <div class="plan"><h2>V.I.P</h2></div>
+    <ul class="unstyled">
+      <li>Fifteen promotions per month</li>
+      <li>Two FREE promotions</li>
+    </ul>
+    <h3>$29.99 per month</h3>
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'vip'), :class => 'btn btn-primary' %>
+  </div>
 </div>
 
