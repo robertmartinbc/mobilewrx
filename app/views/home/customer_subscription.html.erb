@@ -1,0 +1,34 @@
+<div id="welcome" class="page-header span12">
+  <h1 align="center">Customer Site</h1>
+  <h3 align="center">Join Now To Earn Great Savings!</h3>
+</div>
+<center>
+<div class="row span12 plans">
+  <div class="span3 well">
+    <div class="plan"><h2>Standard</h2></div>
+    <ul class="unstyled">
+      <li>Five promotions per month</li>
+    </ul>
+    <h3>$9/month</h3>
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'standard'), :class => 'btn btn-primary' %>
+  </div>
+  <div class="span3 well featured">
+    <div class="plan featured-plan"><h2>Premium</h2></div>
+    <ul class="unstyled">
+      <li>Ten promotions per month</li>
+      <li>First promotion FREE</li>
+    </ul>
+    <h3>$19/month</h3>
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'premium'), :class => 'btn btn-primary' %>
+  </div>
+  <div class="span3 well">
+    <div class="plan"><h2>V.I.P</h2></div>
+    <ul class="unstyled">
+      <li>Fifteen promotions per month</li>
+      <li>Two FREE promotions</li>
+    </ul>
+    <h3>$29/month</h3>
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'vip'), :class => 'btn btn-primary' %>
+  </div>
+</div>
+

@@ -1,12 +1,12 @@
 Mobilewrx::Application.routes.draw do
 
-  get "content/standard"
-  get "content/premium"
-  get "content/vip"
-
   resources :charges
 
   resources :promotions
+
+  match "client_subscription" => "home#client_subscription", via: :get
+
+  match "customer_subscription" => "home#customer_subscription", via: :get
 
   match "subscriptions" => "home#subscriptions", via: :get
 
@@ -24,6 +24,9 @@ Mobilewrx::Application.routes.draw do
   get "content/gold"
   get "content/silver"
   get "content/platinum"
+  get "content/standard"
+  get "content/premium"
+  get "content/vip"
   authenticated :user do
     root :to => 'home#index'
   end
