@@ -1,36 +1,32 @@
-<center>
 <div class="row">
-  <div class="span3">
-  </div>
-    <div class="span5">
-      <br>
-      <h1><%= image_tag("mobilewrxlogo.jpg") %></h1>
-    </div>
-  </div>
-  <br>
-  <div class="row">
-  <div class="span2">
-  </div>
-    <div class="span7">
-  <h5>Please confirm or edit your promotion:</h5>
-</div>
-</div>
-<br>
-<br>
-<div class="row">
-  <div class="span4">
-  </div>
-  <div class="span3">
-    <div class="thumbnail">
-       <p><%= image_tag(@promotion.image_url, class: "image-rounded") if @promotion.image? %></p>
-      <div class="caption">
-        <p><%= @promotion.title %></h3>
-        <p align="center"><%= @promotion.description %><pp>
-        <p align="center"><%= @promotion.price %></p>
+  <div class="span11 well">
+       <div class="span7 well pull-left image_container"><%= image_tag(@promotion.image_url, class: "image-rounded") if @promotion.image? %>
+        <div>
+        <h3><%= @promotion.title %></h3>
+      </div>
+      <div class="span6">
+          <p class="justify"><%= @promotion.details %></p>
+      </div>
+       </div>
+     <div class="span2 well">
+        <h4>Highlights:</h4>
+        <p align="center"></p>
+        <br>
+        <p align="center">$<%= @promotion.price %></p>
+        <br>
         <p align><%= @promotion.expiration %></p>
         <p align><%= @promotion.website %></p>
-        <p align="center"><%= image_tag(@promotion.qrcode_url, class: "image-rounded") if @promotion.qrcode? %></p>
-        <p align="center"><a href="#" class="btn btn-primary">Purchase</a></p>
+      </div>
+        <div class="span2 well image_container1"><%= image_tag(@promotion.qrcode_url, class: "image-rounded") if @promotion.qrcode? %>
+        </div>
+      <div class="span2 well">
+        <%= form_tag charges_path do %>
+          <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Cost of Promotion"
+          data-amount="500"></script>
+        <% end %>
+      </div>
       </div>
     </div>
   </div>
@@ -40,7 +36,8 @@
   </div>
   <div class="span3">
     <br>
-<%= link_to "Edit", edit_promotion_path(@promotion), class: 'btn btn-primary' %>
-<%= link_to "Confirm", promotions_path, class: 'btn btn-primary' %>
+    <% if can? :edit, @promotion %>
+      <%= link_to "Edit", edit_promotion_path(@promotion), class: 'btn btn-primary' %>
+      <% end %>
 </div>
 </div>
