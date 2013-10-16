@@ -1,5 +1,7 @@
 Mobilewrx::Application.routes.draw do
 
+  get "promotions/view"
+
   resources :charges
 
   resources :promotions

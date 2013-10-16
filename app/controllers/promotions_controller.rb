@@ -36,4 +36,8 @@ end
       render :new
     end
   end
+
+  # def view
+  #   @promotion = Promotion.find(params[:id])
+  # end
 end
