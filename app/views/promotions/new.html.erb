@@ -1,4 +1,4 @@
-<center>
+
 <div class="row">
 	<div class="span3">
 	</div>
@@ -18,19 +18,29 @@
 <br>
 <br>
 <div class="row">
-	<div class="span4">
-	</div>
-		<div class="span3">
-<%= simple_form_for @promotion do |f| %>
-	<p><%= f.input :title, label: false, placeholder: 'Title' %></p>
-	<p><%= f.input :description, :input_html => { :rows => 2}, label: false, placeholder: 'Enter Brief description: no more than 30 characters' %></p>
-	<p><%= f.input :price, label: false, placeholder: 'Price' %></p>
-	<p><%= f.input :expiration, label: false, placeholder: 'Expiry Date' %></p>
-	<p><%= f.input :website, label: false, placeholder: 'Website' %></p>
-	<p><%= f.file_field :image %><font color="blue">*Upload Image</font></p>
-	<p><%= f.file_field :qrcode %><font color="blue">*Upload QR code</font></p>
+	<%= simple_form_for @promotion do |f| %>
+		<div class="span12 well">
+			<div class="span3 well">
+			<div>
+				<%= f.input :title, label: false, placeholder: 'Title' %>
+			</div>
+				<div><%= f.input :description, :input_html => { :rows => 2}, label: false, placeholder: 'Enter Brief description: no more than 30 characters' %>
+				</div>
+					<div><%= f.input :price, label: false, placeholder: 'Price' %>
+					</div>
+						<div><%= f.input :expiration, as: :date, label: false, placeholder: 'Expiry Date' %></div>
+							<div><%= f.input :website, label: false, placeholder: 'Website' %>
+						</div>
+					</div>
+						<div class="span7 well"><%= f.input :details, :input_html => { :rows => 6, :cols => 15 }, label: false, placeholder: 'Full Details' %></div>
+							<div class="span7 well"><%= f.input :highlights, :input_html => { :rows => 5, cols: 15}, label: false, placeholder: 'Highlights' %></div>
+							<div class="span3 well"><%= f.file_field :image %><font color="blue">*Upload Image</font></div>
+									<div class="span3 well"><%= f.file_field :qrcode %><font color="blue">*Upload QR code</font></div>
 	<br>
-	<p><%= f.submit %></p>
+<div class="span4"><%= f.submit %></div>
+						</div>
+					</div>
+<br>
 	<% end %>
 </div>
 </div>

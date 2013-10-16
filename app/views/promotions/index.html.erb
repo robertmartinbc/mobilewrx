@@ -17,7 +17,7 @@
 			<p align="center"><%= promotion.expiration %></p>
 			<p align="center"><%= link_to promotion.website %></p>
 			<p align="center"><%= image_tag(promotion.qrcode_url, class: "img-rounded") %></p>
-			<p align="center"><%= link_to "View", promotions_view_path, class: "btn btn-mini btn-primary" %></p>
+			<p align="center"><%= link_to "View", promotion_path(promotion), class: "btn btn-primary" %></p>
 		</div>
 		</div>
 

@@ -1,5 +1,5 @@
 class Promotion < ActiveRecord::Base
-  attr_accessible :description, :expiration, :price, :title, :website, :image, :qrcode
+  attr_accessible :description, :expiration, :price, :title, :website, :image, :qrcode, :details, :highlights
 
   belongs_to :user
 
