@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="span11 well">
-       <div class="span7 well pull-left image_container"><%= image_tag(@promotion.image_url, class: "image-rounded") if @promotion.image? %>
+  <div class="span12">
+       <div class="span7 pull-left image_container"><%= image_tag(@promotion.image_url, class: "image-rounded") if @promotion.image? %>
         <div>
         <h3><%= @promotion.title %></h3>
       </div>
@@ -8,18 +8,22 @@
           <p class="justify"><%= @promotion.details %></p>
       </div>
        </div>
+       <div class="span1">
+    </div>
      <div class="span2 well">
-        <h4>Highlights:</h4>
-        <p align="center"></p>
+        <h4 align="center">Highlights</h4>
         <br>
-        <p align="center">$<%= @promotion.price %></p>
+        <p align="center">Price: $<%= @promotion.price %></p>
         <br>
-        <p align><%= @promotion.expiration %></p>
-        <p align><%= @promotion.website %></p>
-      </div>
-        <div class="span2 well image_container1"><%= image_tag(@promotion.qrcode_url, class: "image-rounded") if @promotion.qrcode? %>
+        <p align="center">Expires: <%= @promotion.expiration %></p>
+        <br>
+        <p align="center"><%= @promotion.website %></p>
+        <br>
+        <div align="center"><%= image_tag(@promotion.qrcode_url, class: "image-rounded") if @promotion.qrcode? %>
         </div>
-      <div class="span2 well">
+        <br>
+        <br>
+      <div align="center">
         <%= form_tag charges_path do %>
           <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
@@ -27,17 +31,9 @@
           data-amount="500"></script>
         <% end %>
       </div>
+      <br>
       </div>
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="span4">
-  </div>
-  <div class="span3">
-    <br>
-    <% if can? :edit, @promotion %>
-      <%= link_to "Edit", edit_promotion_path(@promotion), class: 'btn btn-primary' %>
-      <% end %>
-</div>
-</div>
+

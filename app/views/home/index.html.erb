@@ -1,21 +1,43 @@
 <div class="page-header">
   <center>
-    <br>
-  <h1><%= image_tag("mobilewrxlogo.jpg") %></h1>
-  <h4>MobileWRX is Victoria's premium online marketing tool!</h4>
-</center>
+      <h1><%= image_tag("mobilewrxlogo.jpg") %></h1>
+      <h4>MobileWRX is Victoria's premium online marketing tool!</h4>
+  </center>
 </div>
-<div class="span1">
-  </div>
 <div class="row">
-	<div class="span4 well">
-  	<h4>For Clients</h4>
-    <%= link_to "Subscribe", client_subscription_path, class: 'btn btn-primary btn-mini' %>
-  	</div>
-	<div class="row">
-		<div class="span4 well">
-  			<h4>For Customers</h4>
-        <%= link_to "Subscribe", customer_subscription_path, class: 'btn btn-primary btn-mini' %>
-		</div>
-	</div>
-<br>
+<div class="span12">
+  <% @random_promotions.each do |promotion| %>
+  <br>
+    <div class="span7 pull-left image_container"><%= image_tag(promotion.image_url, class: "image-rounded") if promotion.image? %>
+      <div>
+        <h3><%= promotion.title %></h3>
+      </div>
+      <div class="span6">
+        <p class="justify"><%= promotion.details %></p>
+      </div>
+      <div>
+        <p align="right"><%= link_to "View", promotion_path(promotion), class: "btn btn-primary" %></p>
+      </div>
+    </div>
+    <div class="span2">
+    </div>
+     <div class="span2">
+      <p><% @random1_promotions.each do |promotion| %>
+        <h4><%= promotion.title %></h4>
+      <%= image_tag(promotion.image_url, class: "image-rounded") if promotion.image? %></p>
+      <p align="right"><%= link_to "View", promotion_path(promotion), class: "btn btn-mini btn-primary" %></p>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="span4">
+  </div>
+  <div class="span3">
+    <br>
+
+</div>
+</div>
+
