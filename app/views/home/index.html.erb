@@ -16,12 +16,9 @@
     </div>
     <div class="span1">
     </div>
-     <div class="span3 thumbnail">
+     <div class="span2 thumbnail">
       <p><% @random1_promotions.each do |promotion| %>
-        <hr>
-        <h4><%= promotion.title %></h4>
-      <%= image_tag(promotion.image_url, class: "image-rounded") if promotion.image? %></p>
-      <p align="right"><%= link_to "View", promotion_path(promotion), class: "btn btn-mini btn-primary" %></p>
+      <%= link_to image_tag(promotion.image_url, class: "image-rounded"), promotion_path(promotion) %></p>
         <% end %>
         <% end %>
       </div>

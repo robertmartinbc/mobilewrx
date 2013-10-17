@@ -10,18 +10,13 @@
     <%= yield(:head) %>
   </head>
   <body class="body <%= controller_name %> <%= action_name %>">
-    <div class="navbar navbar-fixed-top">
-      <nav class="navbar-inner">
+    <div class="nav nav-pills">
         <div class="container">
           <%= render 'layouts/navigation' %>
         </div>
-      </nav>
     </div>
     <div class="row">
       <div class="container">
-        <div class="span11 thumbnail">
-          <h1><%= image_tag("mobilewrxlogo.jpg") %></h1>
-        </div>
       </div>
     </div>
     <div id="main" role="main">
