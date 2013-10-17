@@ -8,21 +8,22 @@
 <div class="span12">
   <% @random_promotions.each do |promotion| %>
   <br>
-    <div class="span7 pull-left image_container"><%= image_tag(promotion.image_url, class: "image-rounded") if promotion.image? %>
+    <div class="span7 well pull-left image_container"><%= image_tag(promotion.image_url, class: "image-rounded") if promotion.image? %>
       <div>
         <h3><%= promotion.title %></h3>
       </div>
-      <div class="span6">
+      <div class="span6 well">
         <p class="justify"><%= promotion.details %></p>
       </div>
       <div>
         <p align="right"><%= link_to "View", promotion_path(promotion), class: "btn btn-primary" %></p>
       </div>
     </div>
-    <div class="span2">
+    <div class="span1">
     </div>
-     <div class="span2">
+     <div class="span3 well">
       <p><% @random1_promotions.each do |promotion| %>
+        <hr>
         <h4><%= promotion.title %></h4>
       <%= image_tag(promotion.image_url, class: "image-rounded") if promotion.image? %></p>
       <p align="right"><%= link_to "View", promotion_path(promotion), class: "btn btn-mini btn-primary" %></p>

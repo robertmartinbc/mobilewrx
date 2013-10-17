@@ -1,16 +1,16 @@
 <div class="row">
   <div class="span12">
-       <div class="span7 pull-left image_container"><%= image_tag(@promotion.image_url, class: "image-rounded") if @promotion.image? %>
+       <div class="span7 well pull-left image_container"><%= image_tag(@promotion.image_url, class: "image-rounded") if @promotion.image? %>
         <div>
         <h3><%= @promotion.title %></h3>
       </div>
-      <div class="span6">
+      <div class="span6 well">
           <p class="justify"><%= @promotion.details %></p>
       </div>
        </div>
        <div class="span1">
     </div>
-     <div class="span2 well">
+     <div class="span3 well">
         <h4 align="center">Highlights</h4>
         <br>
         <p align="center">Price: $<%= @promotion.price %></p>
