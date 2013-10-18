@@ -1,17 +1,15 @@
 <br>
 <div class="row">
   <div class="span12">
-       <div class="span6 thumbnail pull-left image_container"><%= image_tag(@promotion.image_url, class: "image-rounded") if @promotion.image? %>
-        <div>
+       <div class="span7 pull-left image_container"><%= image_tag(@promotion.image_url, class: "img-rounded") if @promotion.image? %>
+        <div class="thumbnail">
         <h3><%= @promotion.title %></h3>
-      </div>
-      <div class="span5 well">
+      <div class="span6 well">
           <p class="justify"><%= @promotion.details %></p>
       </div>
-       </div>
-       <div class="span1">
     </div>
-     <div class="span3 thumbnail">
+       </div>
+     <div class="span4 thumbnail">
         <h4 align="center">Highlights</h4>
         <br>
         <p align="center">Price: $<%= @promotion.price %></p>
@@ -20,7 +18,7 @@
         <br>
         <p align="center"><%= @promotion.website %></p>
         <br>
-        <div align="center"><%= image_tag(@promotion.qrcode_url, class: "image-rounded") if @promotion.qrcode? %>
+        <div align="center"><%= image_tag(@promotion.qrcode_url, class: "img-rounded") if @promotion.qrcode? %>
         </div>
         <br>
         <br>

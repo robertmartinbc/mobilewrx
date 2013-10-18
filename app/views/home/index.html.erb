@@ -3,22 +3,30 @@
 <div class="span12">
   <% @random_promotions.each do |promotion| %>
   <br>
-    <div class="span7 thumbnail pull-left image_container"><%= image_tag(promotion.image_url, class: "image-rounded") if promotion.image? %>
-      <div>
+    <div class="span7 pull-left image_container"><%= image_tag(promotion.image_url, class: "img-rounded") if promotion.image? %>
+      <div class="thumbnail">
         <h3><%= promotion.title %></h3>
-      </div>
       <div class="span6 well">
         <p class="justify"><%= promotion.details %></p>
       </div>
+      <br>
       <div>
         <p align="right"><%= link_to "View", promotion_path(promotion), class: "btn btn-primary" %></p>
       </div>
     </div>
+  </div>
     <div class="span1">
     </div>
-     <div class="span2 thumbnail">
-      <p><% @random1_promotions.each do |promotion| %>
-      <%= link_to image_tag(promotion.image_url, class: "image-rounded"), promotion_path(promotion) %></p>
+     <div class="span4 thumbnail">
+      <% @random1_promotions.each do |promotion| %>
+      <%= link_to image_tag(promotion.image_url, class: "img-rounded"), promotion_path(promotion) %>
+        <div>
+          <%= promotion.title %>
+        </div>
+        <div><%= promotion.details %>
+      </div>
+        <div>
+      </div>
         <% end %>
         <% end %>
       </div>

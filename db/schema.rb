@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131016065455) do
+ActiveRecord::Schema.define(:version => 20131018055512) do
 
   create_table "promotions", :force => true do |t|
     t.string   "title"
@@ -19,13 +19,16 @@ ActiveRecord::Schema.define(:version => 20131016065455) do
     t.integer  "price"
     t.date     "expiration"
     t.string   "website"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.integer  "user_id"
     t.string   "image"
     t.string   "qrcode"
     t.text     "details"
     t.text     "highlights"
+    t.text     "fine_print"
+    t.text     "company_info"
+    t.text     "about"
   end
 
   add_index "promotions", ["user_id"], :name => "index_promotions_on_user_id"
