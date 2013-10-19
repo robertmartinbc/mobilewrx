@@ -1,21 +1,23 @@
 <% @promotions.each do |promotion| %>
-<div class="row">
-	<div class="span3">
-		<div class="thumbnail">
-			<p><%= image_tag(promotion.image_url, class: "img-rounded") %></p>
-			<p align="center"><%= promotion.title %></p>
-			<p align="center"><%= promotion.description %></p>
-			<p align="center"><%= promotion.price %></p>
-			<p align="center"><%= promotion.expiration %></p>
-			<p align="center"><%= link_to promotion.website %></p>
-			<p align="center"><%= image_tag(promotion.qrcode_url, class: "img-rounded") %></p>
-			<p align="center"><%= link_to "View", promotion_path(promotion), class: "btn btn-primary" %></p>
-		</div>
+	<div class="row">
+		<div class="comtainer">
+		<div class="span3">
+			<div class="thumbnail">
+				<p><%= image_tag(promotion.image_url, class: "img-rounded") %></p>
+				<p align="center"><%= promotion.title %></p>
+				<p align="center"><%= promotion.description %></p>
+				<p align="center"><%= promotion.price %></p>
+				<p align="center"><%= promotion.expiration %></p>
+				<p align="center"><%= link_to promotion.website %></p>
+				<p align="center"><%= image_tag(promotion.qrcode_url, class: "img-rounded") %></p>
+				<p align="center"><%= link_to "View", promotion_path(promotion), class: "btn btn-primary" %></p>
+			</div>
 		</div>
 
 
 <% end %>
 
 
+</div>
 </div>
 <center><p><%= will_paginate @promotions %></p>

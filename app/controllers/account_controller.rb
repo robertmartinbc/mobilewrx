@@ -15,11 +15,11 @@ class AccountController < ApplicationController
 			current_user.roles.first.name == 'standard'
 			redirect_to content_standard_path
 		elsif
-			current_user.roles.first.name == 'standard'
-			redirect_to content_standard_path
+			current_user.roles.first.name == 'premium'
+			redirect_to content_premium_path
 		elsif
-			current_user.roles.first.name == 'standard'
-			redirect_to content_standard_path
+			current_user.roles.first.name == 'vip'
+			redirect_to content_vip_path
 		else
 			root_path
 		end
