@@ -1,5 +1,7 @@
 Mobilewrx::Application.routes.draw do
 
+  get "account/show"
+
   get "promotions/view"
 
   resources :charges
@@ -38,5 +40,5 @@ Mobilewrx::Application.routes.draw do
     put 'update_plan', :to => 'registrations#update_plan'
     put 'update_card', :to => 'registrations#update_card'
   end
-  resources :users
+  resources :users, only: [:show]
 end

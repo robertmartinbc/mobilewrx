@@ -1,6 +1,9 @@
 <h1>Content#silver</h1>
 <p>Find me in app/views/content/silver.html.erb</p>
 
+<%= @current_user.name %>
+<p><%= @current_user.email %></p>
+
 
   <%= link_to "New Promotion", new_promotion_path, class: 'btn btn-primary btn-mini' %>
 

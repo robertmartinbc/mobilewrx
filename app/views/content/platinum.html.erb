@@ -1,5 +1,18 @@
-<h1>Content#platinum</h1>
-<p>Find me in app/views/content/platinum.html.erb</p>
+
+
+<h1>Platinum</h1>
+
+
+<%= @current_user.name %>
+<p><%= @current_user.email %></p>
+ <%= pluralize(@current_user.promotions.count, 'promotions') %>
+<% @current_user.promotions.each do |promotion| %>
+
+<%= promotion.title %>
+<%= promotion.title %>
+
+
+<% end %>
 
   <%= link_to "New Promotion", new_promotion_path, class: 'btn btn-primary btn-mini' %>
 
