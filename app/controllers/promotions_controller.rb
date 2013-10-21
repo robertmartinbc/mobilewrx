@@ -1,8 +1,5 @@
 class PromotionsController < ApplicationController
   def index
-    @search = Promotion.search do
-      fulltext params[:search]
-    end
   	@promotions = Promotion.paginate(page: params[:page], per_page: 4)
   end
 
