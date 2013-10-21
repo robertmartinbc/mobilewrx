@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="container">
 		<div class="span3 well">
-			<h3 align="center" style="background-color: blue">Profile</h3>
+			<h3 align="center">Profile</h3>
 			<p><%= @current_user.name %></p>
 			<p><%= @current_user.email %></p>
 			<p><%= @current_user.roles.first.name.titleize %></p>
@@ -138,6 +138,7 @@
 				<p><%= pluralize(@current_user.promotions.count, 'promotions') %></p>
 				<% @current_user.promotions.each do |promotion| %>
 					<%= promotion.title %>
+					<br>
 					<% end %>
 						<p><%= link_to "New Promotion", new_promotion_path, class: 'btn btn-primary btn-small pull-right' %></p>
 			</div>
