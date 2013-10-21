@@ -4,6 +4,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Mobilewrx" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Mobilewrx" %>">
+   <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCsGjoZtUVne8kUjbrdP0PwGtBzRsCLe_k&sensor=false">
+    </script>
+
+    <script>
+    function initialize()
+    {
+    var mapProp = {
+      center:new google.maps.LatLng(48.42842,-123.36564),
+      zoom:15,
+      mapTypeId:google.maps.MapTypeId.ROADMAP
+      };
+    var map=new google.maps.Map(document.getElementById("googleMap")
+      ,mapProp);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -33,6 +50,7 @@
             </div>
           </div>
           <footer>
+            <%= yield :scripts %>
           </footer>
         </div>
       </div> <!--! end of .container -->
