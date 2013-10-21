@@ -27,27 +27,32 @@
       </div>
     </div>
   </div>
-    <div class="span1">
-    </div>
      <div class="span4">
       <% @random1_promotions.each do |promotion| %>
-      <%= link_to image_tag(promotion.image_url, class: "img-rounded"), promotion_path(promotion) %>
+      <table>
+        <tr>
+          <th rowspan="3"><%= link_to image_tag(promotion.image_url, class: "img-rounded"), promotion_path(promotion) %></th>
+          <td class="button">$<%= promotion.price %></td>
+        </tr>
+        <tr>
+          <td class="button"><%= link_to "View", promotion_path(promotion) %></td>
+        </tr>
+        <tr>
+          <td class="button"><%= link_to "Buy Now", promotion_path(promotion) %></td>
+        </tr>
+      </table>
+
         <div>
-          <%= promotion.title %>
+          <p><strong><%= promotion.title %></strong></p>
+          <br>
         </div>
-        <div>
-      </div>
         <% end %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="span4">
-  </div>
-  <div class="span3">
-    <br>
+
 
 </div>
 </div>
