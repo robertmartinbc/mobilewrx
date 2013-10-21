@@ -3,10 +3,6 @@ class Promotion < ActiveRecord::Base
 
   belongs_to :user
 
-  searchable do
-    text :title, :description
-  end
-
   default_scope order('created_at DESC')
 
   mount_uploader :image, ImageUploader
