@@ -12,12 +12,34 @@
  *= require_tree .
 */
 
+.red_button {
+
+}
+
+.blue_button {
+
+}
+
+.green_button {
+
+}
+
+.text_fields
+{
+  width: auto;
+  height: auto;
+}
+
 .body {
   background-color: #DEFAF9;
 }
 
 .thumbnail {
   background-color: #FFFFFF;
+}
+
+.thumbnail1 {
+  background-color: #999999;
 }
 
 .well {
@@ -36,7 +58,7 @@
 }
 
 .image_container img {
-  width: 700px;
+  width: 680px;
   height: 400px
 }
 
@@ -132,3 +154,58 @@
   background-image: -o-linear-gradient(top, #e0dd94, #c4bb61);
   background-image: linear-gradient(to bottom, #e0dd94, #c4bb61);
 }
+
+.big-orange{
+  padding: 30px 50px;
+  background-color: #f49f02;
+  -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  width: 100px;
+}
+
+.big-green{
+  background-color: #7AC943;
+  -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 80px;
+  text-align: center;
+}
+
+.tiny-green{
+  padding: 10px 15px;
+  background-color: #7AC943;
+  -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+a.big-green:hover{
+  text-decoration:none;
+  color: white;
+}
+
+input:disabled {
+  background-color: #f5ce87;
+}
+
+input#submitRetrieval.big-orange{
+   width: 425px;
+ }
+#select-few{
+  padding-left: 60px;
+}
+

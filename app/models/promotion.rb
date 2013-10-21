@@ -1,7 +1,11 @@
 class Promotion < ActiveRecord::Base
-  attr_accessible :description, :expiration, :price, :title, :website, :image, :qrcode, :details, :highlights, :about, :company_info, :finr_print
+  attr_accessible :description, :expiration, :price, :title, :website, :image, :qrcode, :details, :highlights, :about, :company_info, :fine_print
 
   belongs_to :user
+
+  searchable do
+    text :title, :description
+  end
 
   default_scope order('created_at DESC')
 

@@ -1,31 +1,38 @@
-<div class="span7">
-  <h5>Please fill out the form below describing your promotion.</h5>
-</div>
-</div>
-<br>
-<br>
 <div class="row">
+	<div class="container">
 	<%= simple_form_for @promotion do |f| %>
-		<div class="span12">
-			<div class="span3 well">
+		<div class="span12 well">
 			<div>
-				<%= f.input :title, label: false, placeholder: 'Title' %>
-			</div>
-				<div><%= f.input :description, :input_html => { :rows => 2}, label: false, placeholder: 'Enter Brief description: no more than 30 characters' %>
+		<h4>Please fill out the form below describing your promotion. All fields are required.</h4>
+		<br/>
+	</div>
+			<div class="span3">
+				<div>
+					<%= f.input :title, label: false, placeholder: 'Title' %>
 				</div>
-					<div><%= f.input :price, label: false, placeholder: 'Price' %>
-					</div>
-						<div><%= f.input :expiration, as: :date, label: false, placeholder: 'Expiry Date' %></div>
-							<div><%= f.input :website, label: false, placeholder: 'Website' %>
-						</div>
-					</div>
-						<div class="span7 well"><%= f.input :details, :input_html => { :rows => 6, :cols => 15 }, label: false, placeholder: 'Full Details' %></div>
-							<div class="span7 well"><%= f.input :highlights, :input_html => { :rows => 5, cols: 15}, label: false, placeholder: 'Highlights' %></div>
-							<div class="span3 well"><%= f.file_field :image %><font color="blue">*Upload Image</font></div>
-									<div class="span3 well"><%= f.file_field :qrcode %><font color="blue">*Upload QR code</font></div>
-	<br>
-<div class="span3 well pull-left"><%= f.submit %></div>
-
+				<div><%= f.input :description, :input_html => { :rows => 2 }, label: false, placeholder: 'Enter Brief description: no more than 30 characters' %>
+				</div>
+				<div><%= f.input :price, label: false, placeholder: 'Price' %>
+				</div>
+				<div><%= f.input :expiration, as: :date, label: false, placeholder: 'Expiry Date' %>
+				</div>
+				<div><%= f.input :website, label: false, placeholder: 'Website' %>
+				</div>
+				<div><%= f.file_field :image %><font color="blue">*Upload Image</font>
+				</div>
+				<div><%= f.file_field :qrcode %><font color="blue">*Upload QR code</font>
+				</div>
+				<div><%= f.submit %>
+				</div>
+			</div>
+			<div class="span8"><%= f.input :details, :input_html => { class: 'text_fields', :rows => 3, :cols => 130 }, label: false, placeholder: 'Full Details' %></div>
+			<div class="span8"><%= f.input :highlights, :input_html => { class: 'text_fields', :rows => 3, :cols => 130 }, label: false, placeholder: 'Highlights' %></div>
+				<div class="span8"><%= f.input :about, :input_html => { class: 'text_fields', :rows => 3, cols: 130}, label: false, placeholder: 'About' %>
+				</div>
+				<div class="span8"><%= f.input :company_info, :input_html => { class: 'text_fields', :rows => 3, cols: 130}, label: false, placeholder: 'Company Information' %>
+				</div>
+				<div class="span8"><%= f.input :fine_print, :input_html => { class: 'text_fields', :rows => 3, cols: 130}, label: false, placeholder: 'Fine Print' %>
+				</div>
 					</div>
 <br>
 	<% end %>
