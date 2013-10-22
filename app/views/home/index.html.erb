@@ -45,7 +45,7 @@
       <% @random1_promotions.each do |promotion| %>
       <table>
         <tr>
-          <th rowspan="3"><%= link_to image_tag(promotion.image_url, class: "img-rounded"), promotion_path(promotion) %></th>
+          <th rowspan="4"><%= link_to image_tag(promotion.image_url, class: "img-rounded"), promotion_path(promotion) %></th>
           <td class="button">$<%= promotion.price %></td>
         </tr>
         <tr>
@@ -53,6 +53,9 @@
         </tr>
         <tr>
           <td class="button"><%= link_to "Buy Now", promotion_path(promotion) %></td>
+        </tr>
+        <tr>
+          <td class="button"><%= link_to "9 bought", promotion_path(promotion) %></td>
         </tr>
       </table>
 
