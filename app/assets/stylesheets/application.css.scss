@@ -12,6 +12,33 @@
  *= require_tree .
 */
 
+.btn-blue {
+  color: #FFFFFF;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #014464;
+  *background-color: #014464;
+  background-image: -moz-linear-gradient(top, #014464, #014464);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#014464), to(#014464));
+  background-image: -webkit-linear-gradient(top, #014464, #014464);
+  background-image: -o-linear-gradient(top, #014464, #014464);
+  background-image: linear-gradient(to bottom, #014464, #014464);
+  background-repeat: repeat-x;
+  border-color: #014464;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#014464', endColorstr='#014464', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.btn-blue:hover,
+.btn-blue:active,
+.btn-blue.active,
+.btn-blue.disabled,
+.btn-blue[disabled] {
+  color: #FFFFFF;
+  background-color: #014464;
+  *background-color: #003bb3;
+}
+
+
 .button {
      width: 100px;
      height: 45px;

@@ -6,28 +6,31 @@
 <div class="row span12 plans">
   <div class="span3 well">
     <div class="plan"><h2>Silver</h2></div>
-    <ul class="unstyled">
-      <li>Five promotions per month</li>
-    </ul>
-    <h3>$9/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn btn-primary' %>
-  </div>
-  <div class="span3 well featured">
-    <div class="plan featured-plan"><h2>Gold</h2></div>
-    <ul class="unstyled">
-      <li>Ten promotions per month</li>
-      <li>First promotion FREE</li>
-    </ul>
-    <h3>$19/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn btn-primary' %>
-  </div>
-  <div class="span3 well">
-    <div class="plan"><h2>Platinum</h2></div>
-    <ul class="unstyled">
-      <li>Fifteen promotions per month</li>
-      <li>Two FREE promotions</li>
-    </ul>
-    <h3>$29/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn btn-primary' %>
+      <h3>$400/month</h3>
+        <P>Minimum 1 Month Campaign</p>
+          <p>Set Up & Distribution</p>
+          <p>QR Code</p>
+          <p>SMS/Email Push</p>
+          <br>
+          <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn-blue btn-large' %>
+    </div>
+    <div class="span3 well featured">
+      <div class="plan featured-plan"><h2>Gold</h2></div>
+        <h3>$600/month</h3>
+        <p>All Siver</p>
+        <p>Featured Deal</p>
+        <p>Monthly Tracking</p>
+        <br>
+        <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn-blue btn-large' %>
+    </div>
+    <div class="span3 well">
+      <div class="plan"><h2>Platinum</h2></div>
+        <h3>$1000/month</h3>
+        <p>All Gold</p>
+        <p>Front Page Deal</p>
+        <p>Mobile Ticketing</p>
+        <p>Scanning Equipment</p>
+        <br>
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn-blue btn-large' %>
   </div>
 </div>
