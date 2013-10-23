@@ -10,12 +10,10 @@
         <br>
         <p align="center">Expires: <%= @promotion.expiration %></p>
         <br>
-        <p align="center"><%= @promotion.website %></p>
-        <br>
-        <div align="center"><%= image_tag(@promotion.qrcode_url, class: "img-rounded") if @promotion.qrcode? %>
-        </div>
-        <br>
-        <br>
+        <p align="center"><%= image_tag(@promotion.qrcode_url, class: "img-rounded") if @promotion.qrcode? %>
+          <br>
+          <br>
+        </p>
       <div align="center">
       <%= form_tag charges_path do %>
         <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
@@ -40,22 +38,26 @@
           <p><%= @promotion.highlights %></p>
       </div>
       <div class="span3 justify">
-        <h4>About</h4>
-          <p><%= @promotion.about %></p>
+        <h4>Company Information</h4>
+          <p><%= @promotion.company_info %></p>
       </div>
       <div class="span3 justify">
         <h4>Fine Print</h4>
           <p><%= @promotion.fine_print %></p>
-      </div>
-      <div class="span3 justify">
-        <h4>Company Information</h4>
-          <p><%= @promotion.company_info %></p>
           <br>
       </div>
-      <div class="span3">
+      <div class="span3 pull-left" id="googleMap" style="width:275px;height:250px;">
       </div>
-      <div class="span3 pull-center" id="googleMap" style="width:275px;height:250px;">
-      </div>
+      <div align="center">
+      <%= form_tag charges_path do %>
+      <br>
+    </br>
+        <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-description="Cost of Promotion"
+        data-amount="500"></script>
+      <% end %>
+    </div>
     </div>
   </div>
 </div>

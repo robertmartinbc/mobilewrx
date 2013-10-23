@@ -22,10 +22,6 @@
         <p class="justify"><%= promotion.highlights %></p>
       </div>
       <div class="span3">
-        <h4>About</h4>
-        <p class="justify"><%= promotion.about %></p>
-      </div>
-      <div class="span3">
         <h4>Company Information</h4>
         <p class="justify"><%= promotion.company_info %></p>
       </div>
@@ -34,9 +30,13 @@
         <p class="justify"><%= promotion.fine_print %></p>
         <br>
       </div>
-      <div class="span3">
+      <div class="span3" id="googleMap" style="width:275px;height:250px;">
       </div>
-      <div class="span3 pull-center" id="googleMap" style="width:275px;height:250px;">
+      <div class="span3 pull-right">
+        <br>
+        <br>
+
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "View", promotion_path(promotion), class: 'btn-blue btn-large' %></p>
       </div>
     </div>
     <% end %>
