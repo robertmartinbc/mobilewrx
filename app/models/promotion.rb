@@ -3,6 +3,8 @@ class Promotion < ActiveRecord::Base
 
   belongs_to :user
 
+  has_many :purchases
+
   default_scope order('created_at DESC')
 
   mount_uploader :image, ImageUploader

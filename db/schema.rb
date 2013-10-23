@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131021163924) do
+ActiveRecord::Schema.define(:version => 20131023153031) do
 
   create_table "promotions", :force => true do |t|
     t.string   "title"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(:version => 20131021163924) do
   end
 
   add_index "promotions", ["user_id"], :name => "index_promotions_on_user_id"
+
+  create_table "purchases", :force => true do |t|
+    t.integer  "purchase_id"
+    t.integer  "user_id"
+    t.string   "stripe_reference_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -64,9 +72,11 @@ ActiveRecord::Schema.define(:version => 20131021163924) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "gmaps"
+    t.integer  "purchase_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["purchase_id"], :name => "index_users_on_purchase_id"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "users_roles", :id => false, :force => true do |t|

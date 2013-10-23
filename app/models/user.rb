@@ -7,8 +7,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :stripe_token, :coupon, :avatar
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :stripe_token, :coupon, :avatar, :purchase_id
   has_many :promotions
+  has_many :purchases
   mount_uploader :avatar, AvatarUploader
   attr_accessor :stripe_token, :coupon
   before_save :update_stripe
