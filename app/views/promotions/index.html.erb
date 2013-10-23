@@ -6,9 +6,8 @@
 				<p><%= image_tag(promotion.image_url, class: "img-rounded") %></p>
 				<h4 align="center"><strong><%= promotion.title %></strong></h4>
 				<p align="center"><%= promotion.description %></p>
-				<p align="center"><%= promotion.price %></p>
+				<p align="center">$<%= promotion.price %></p>
 				<p align="center"><%= promotion.expiration %></p>
-				<p align="center"><%= link_to promotion.website %></p>
 				<p align="center"><%= image_tag(promotion.qrcode_url, class: "img-rounded") %></p>
 				<br>
 				<p align="center"><%= link_to "Buy", promotion_path(promotion), class: "btn-blue btn-large" %></p>

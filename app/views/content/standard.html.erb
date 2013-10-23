@@ -6,7 +6,7 @@
 			<p><%= @current_user.email %></p>
 			<p><%= @current_user.roles.first.name.titleize %></p>
 			<p><%= @current_user.last_4_digits %></p>
-			<p><%= link_to "Edit", edit_user_registration_path , class: 'btn btn-primary btn-small pull-right' %></p>
+			<p><%= link_to "Edit", edit_user_registration_path , class: 'btn-blue btn-small pull-right' %></p>
 		</div>
 		<div class="span5 well">
 			<h3 align="center">Preferences</h3>
@@ -130,11 +130,11 @@
 			        <span class="switch-selection"></span>
 					</div>
 				</div>
-				<p><%= link_to "Update", "#", class: 'btn btn-primary btn-small pull-right' %></p>
+				<p><%= link_to "Update", "#", class: 'btn-blue btn-small pull-right' %></p>
 			</div>
 
 			<div class="span2 well">
 				<h3 align="center">Purchases</h3>
-					<p><%= link_to "Promotions", promotions_path, class: 'btn btn-primary btn-small pull-right' %></p>
+					<p><%= link_to "Promotions", promotions_path, class: 'btn-blue btn-small pull-right' %></p>
 			</div>
 			</div>
