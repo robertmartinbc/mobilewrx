@@ -6,35 +6,34 @@
 </div>
 </div>
  <div class="col-lg-4">
-    <h3>Featured Deals</h3>
   </div>
 </div>
 </div>
   <% @random_promotions.each do |promotion| %>
   <br>
-    <div class="col-md-8 pull-left image_container"><%= image_tag(promotion.image_url, class: "img-rounded") if promotion.image? %>
+    <div class="col-lg-8 pull-left image_container"><%= image_tag(promotion.image_url, class: "img-rounded") if promotion.image? %>
       <div>
         <h3><%= promotion.title %></h3>
-      <div class="col-md-6">
+      <div class="col-lg-6">
         <h4>Details</h4>
         <p class="justify"><%= promotion.details %></p>
       </div>
-      <div class="col-md-6">
+      <div class="col-lg-6">
         <h4>Highlights</h4>
         <p class="justify"><%= promotion.highlights %></p>
       </div>
-      <div class="col-md-6">
+      <div class="col-lg-6">
         <h4>Company Information</h4>
         <p class="justify"><%= promotion.company_info %></p>
       </div>
-      <div class="col-md-6">
+      <div class="col-lg-6">
         <h4>Fine Print</h4>
         <p class="justify"><%= promotion.fine_print %></p>
         <br>
       </div>
-      <div class="col-md-6 pull-left" id="googleMap" style="width:275px;height:250px;">
+      <div class="col-lg-6 pull-left" id="googleMap" style="width:275px;height:250px;">
       </div>
-      <div class="col-md-6 pull-right">
+      <div class="col-lg-6 pull-right">
         <br>
         <br>
 
@@ -43,7 +42,8 @@
     </div>
     <% end %>
   </div>
-     <div class="col-md-4">
+     <div class="col-lg-4">
+      <h3>Featured Deals</h3>
       <% @random1_promotions.each do |promotion| %>
       <table>
         <tr>

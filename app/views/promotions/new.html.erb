@@ -1,12 +1,12 @@
 <div class="row">
 	<div class="container">
 	<%= simple_form_for @promotion do |f| %>
-		<div class="span12 well">
+		<div class="col-lg-12">
 			<div>
 		<h4>Please fill out the form below describing your promotion. All fields are required.</h4>
 		<br/>
 	</div>
-			<div class="span3">
+			<div class="col-lg-3">
 				<div>
 					<%= f.input :title, label: false, placeholder: 'Title' %>
 				</div>
@@ -25,11 +25,11 @@
 				<div><%= f.submit %>
 				</div>
 			</div>
-			<div class="span8"><%= f.input :details, :input_html => { class: 'text_fields', :rows => 4, :cols => 130 }, label: false, placeholder: 'Full Details' %></div>
-			<div class="span8"><%= f.input :highlights, :input_html => { class: 'text_fields', :rows => 4, :cols => 130 }, label: false, placeholder: 'Highlights' %></div>
-				<div class="span8"><%= f.input :company_info, :input_html => { class: 'text_fields', :rows => 4, cols: 130}, label: false, placeholder: 'Company Information' %>
+			<div class="col-lg-8"><%= f.input :details, :input_html => { class: 'text_fields', :rows => 4, :cols => 130 }, label: false, placeholder: 'Full Details' %></div>
+			<div class="col-lg-8"><%= f.input :highlights, :input_html => { class: 'text_fields', :rows => 4, :cols => 130 }, label: false, placeholder: 'Highlights' %></div>
+				<div class="col-lg-8"><%= f.input :company_info, :input_html => { class: 'text_fields', :rows => 4, cols: 130}, label: false, placeholder: 'Company Information' %>
 				</div>
-				<div class="span8"><%= f.input :fine_print, :input_html => { class: 'text_fields', :rows => 4, cols: 130}, label: false, placeholder: 'Fine Print' %>
+				<div class="col-lg-8"><%= f.input :fine_print, :input_html => { class: 'text_fields', :rows => 4, cols: 130}, label: false, placeholder: 'Fine Print' %>
 				</div>
 					</div>
 <br>
