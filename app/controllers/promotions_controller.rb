@@ -1,6 +1,13 @@
 class PromotionsController < ApplicationController
+
+  respond_to :html, :json
+
   def index
   	@promotions = Promotion.paginate(page: params[:page], per_page: 4)
+      respond_with do |format|
+      format.json { render json: @promotions}
+      format.html { render html: @promotions}
+    end
   end
 
   def show
