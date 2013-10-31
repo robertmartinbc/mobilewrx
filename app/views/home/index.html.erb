@@ -47,21 +47,22 @@
       <h3>Featured Deals</h3>
     </div>
       <% @random1_promotions.each do |promotion| %>
-      <table class="table-btn-blue" border="0" width="300">
+      <table class="table-btn-blue" border="0" width="250">
         <tr>
-          <th rowspan="3"><%= link_to image_tag(promotion.image_url, class: "img-rounded"), promotion_path(promotion) %></th>
-          <td>$<%= promotion.price %></td>
-        </tr>
-        <tr>
-          <td><%= link_to "View", promotion_path(promotion) %></td>
-        </tr>
-        <tr>
-          <td><%= link_to "Buy", promotion_path(promotion) %></td>
-        </tr>
+        <td colspan="3"><%= link_to image_tag(promotion.image_url, class: "img-rounded"), promotion_path(promotion) %></td>
+          </tr>
+          <tr>
+              <td align="center">$<%= promotion.price %></td>
+              <td align="center"><%= link_to "View", promotion_path(promotion) %></td>
+              <td align="center"><%= link_to "Buy", promotion_path(promotion) %></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center" style="background-color: grey;"><%= promotion.title %></td>
+            <td align="center" style="background-color: grey;">1000 bought</td>
+          </tr>
       </table>
 
         <div>
-          <p><strong><%= promotion.title %><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9 bought</strong></strong></p>
           <br>
         </div>
         <% end %>
