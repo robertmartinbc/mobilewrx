@@ -12,19 +12,25 @@
  *= require_tree .
 */
 
+.white-space {
+  margin-right: 30px;
+}
+
 .icon-bar {
   backgorund-color: #014464
 }
 
 .table-btn-blue {
   color: #FFFFFF;
-  background-color: #014464;
   text-align: center;
+  background-color: #014464;
+  width: 305px;
+  text-align: left;
   -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
 }
 .table-btn-blue tr {
-  height: 25px;
+  height: 45px;
 }
 
 .btn-blue {
