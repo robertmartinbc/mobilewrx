@@ -155,11 +155,15 @@
   background-color: #999999;
 }
 
-.nav .container {
+.navbar .container {
   font-size: 18px;
   font-family: "Helvetica";
-  height: 50px;
+  color: #FFFFFF;
   }
+
+.navbar-fixed-top {
+  background: #014464;
+}
 
 .justify {
 	text-align: justify;
@@ -167,7 +171,7 @@
 }
 
 .image_container img {
-  width: 680px;
+  width: 780px;
   height: 400px
 }
 
