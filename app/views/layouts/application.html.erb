@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">
-     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
     <title><%= content_for?(:title) ? yield(:title) : "Mobilewrx" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Mobilewrx" %>">
    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCsGjoZtUVne8kUjbrdP0PwGtBzRsCLe_k&sensor=false">
@@ -41,15 +41,12 @@
           <div class="collapse navbar-collapse navHeaderCollapse">
             <ul class="nav navbar-nav nav-pills">
               <% if user_signed_in? %>
-               <li class="hidden-xs"><%= link_to "Home", root_path %></li>
+               <li><%= link_to "Home", root_path %></li>
                 <li>
                 <%= link_to 'Promotions', promotions_path %>
                 </li>
                 <li>
                 <%= link_to 'How it Wrx', how_path %>
-                </li>
-                <li>
-                <%= link_to 'FAQ', faq_path %>
                 </li>
                 <li>
                 <%= link_to 'My Account', account_show_path %>
@@ -68,7 +65,7 @@
                   <h5><%= image_tag(current_user.avatar.tiny.url) if current_user.avatar? %> &nbsp;&nbsp;<%= current_user.name %> is logged in</h5>
                 </li>
               <% else %>
-               <li><%= link_to "MobileWRX", root_path %></li>
+               <li><%= link_to "Home", root_path %></li>
               <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Subscriptions<spam class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li> <%= link_to "Client", client_subscription_path %></li>
@@ -80,9 +77,6 @@
                 </li>
                 <li>
                 <%= link_to 'How it WRX', how_path %>
-                </li>
-                <li>
-                <%= link_to 'FAQ', faq_path %>
                 </li>
                 <li>
                 <%= link_to 'Login', new_user_session_path %>
@@ -104,11 +98,11 @@
         <br>
         <br>
         <br>
-      <div class="col-xs-12">
-      <div class="col-xs-10">
+      <div class="col-md-12">
+      <div class="col-md-10">
       <h4> <%= image_tag("mobilewrxlogo.jpeg") %>The World At Your Fingertips</h4>
     </div>
-    <div class="col-xs-0 col-xs-offset-1 hidden-xs">
+    <div class="col-md-0 hidden-xs hidden-sm">
       <a href="#" target="_blank"><%= image_tag("facebook.jpeg") %>&nbsp;&nbsp;<a href="#"><%= image_tag("twitter.jpeg") %></a>
     </div>
   </div>
@@ -119,7 +113,7 @@
       <div class="container">
         <div class="content">
            <div class="row">
-            <div class="col-xs-12">
+            <div class="col-md-12">
               <%= render 'layouts/messages' %>
               <%= yield %>
             </div>

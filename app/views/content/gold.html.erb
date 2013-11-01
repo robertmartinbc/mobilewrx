@@ -1,36 +1,37 @@
-<div class="row">
-	<div class="container">
-		<div class="span3 well">
+<div class="container">
+	<div class="row">
+		<div class="col-lg-3 well">
 			<h3 align="center">Profile</h3>
 			<p><%= @current_user.name %></p>
 			<p><%= @current_user.email %></p>
 			<p><%= @current_user.roles.first.name.titleize %></p>
 			<p><%= @current_user.last_4_digits %></p>
-			<p><%= link_to "Edit", edit_user_registration_path , class: 'btn-blue btn-small pull-right' %></p>
+			<p><%= link_to "Edit", edit_user_registration_path , class: 'btn-blue btn-lgall pull-right' %></p>
 		</div>
-		<div class="span5 well">
+		<div class="col-lg-5 col-lg-offset-1 well">
 			<h3 align="center">Preferences</h3>
-			  <div class="span0">
-			    <p align="center"><strong>Entertainment</strong></p>
-			      <div class="switch switch-blue">
-			        <input type="radio" class="switch-input" name="view" value="off" id="off" checked>
-			        <label for="off" class="switch-label switch-label-off">Off</label>
-			        <input type="radio" class="switch-input" name="view" value="on" id="on">
-			        <label for="on" class="switch-label switch-label-on">On</label>
-			        <span class="switch-selection"></span>
+				<div class="row">
+				  <div class="col-lg-1">
+				    <p align="center"><strong>Entertainment</strong></p>
+				      <div class="switch switch-blue">
+				        <input type="radio" class="switch-input" name="view" value="off" id="off" checked>
+				        <label for="off" class="switch-label switch-label-off">Off</label>
+				        <input type="radio" class="switch-input" name="view" value="on" id="on">
+				        <label for="on" class="switch-label switch-label-on">On</label>
+				        <span class="switch-selection"></span>
+						</div>
 					</div>
-				</div>
-				<div class="span0">
-			    <p align="center"><strong>Sports</strong></p>
-			      <div class="switch switch-blue">
-			        <input type="radio" class="switch-input" name="view2" value="off2" id="off2" checked>
-			        <label for="off2" class="switch-label switch-label-off">Off</label>
-			        <input type="radio" class="switch-input" name="view2" value="on2" id="on2">
-			        <label for="on2" class="switch-label switch-label-on">On</label>
-			        <span class="switch-selection"></span>
+					<div class="col-lg-1 col-lg-offset-3">
+				    <p align="center"><strong>Sports</strong></p>
+				      <div class="switch switch-blue">
+				        <input type="radio" class="switch-input" name="view2" value="off2" id="off2" checked>
+				        <label for="off2" class="switch-label switch-label-off">Off</label>
+				        <input type="radio" class="switch-input" name="view2" value="on2" id="on2">
+				        <label for="on2" class="switch-label switch-label-on">On</label>
+				        <span class="switch-selection"></span>
+						</div>
 					</div>
-				</div>
-					<div class="span0">
+					<div class="col-lg-1 col-lg-offset-3">
 			    <p align="center"><strong>Arts</strong></p>
 			      <div class="switch switch-blue">
 			        <input type="radio" class="switch-input" name="view3" value="off3" id="off3" checked>
@@ -38,107 +39,115 @@
 			        <input type="radio" class="switch-input" name="view3" value="on3" id="on3">
 			        <label for="on3" class="switch-label switch-label-on">On</label>
 			        <span class="switch-selection"></span>
+						</div>
 					</div>
 				</div>
-				<div class="span0">
-			    <p align="center"><strong>Food</strong></p>
-			      <div class="switch switch-blue">
-			        <input type="radio" class="switch-input" name="view4" value="off4" id="off4" checked>
-			        <label for="off4" class="switch-label switch-label-off">Off</label>
-			        <input type="radio" class="switch-input" name="view4" value="on4" id="on4">
-			        <label for="on4" class="switch-label switch-label-on">On</label>
-			        <span class="switch-selection"></span>
+				<div class="row">
+					<div class="col-lg-1">
+				    <p align="center"><strong>Food</strong></p>
+				      <div class="switch switch-blue">
+				        <input type="radio" class="switch-input" name="view4" value="off4" id="off4" checked>
+				        <label for="off4" class="switch-label switch-label-off">Off</label>
+				        <input type="radio" class="switch-input" name="view4" value="on4" id="on4">
+				        <label for="on4" class="switch-label switch-label-on">On</label>
+				        <span class="switch-selection"></span>
+						</div>
+					</div>
+					<div class="col-lg-1 col-lg-offset-3">
+				    <p align="center"><strong>Drink</strong></p>
+				      <div class="switch switch-blue">
+				        <input type="radio" class="switch-input" name="view5" value="off5" id="off5" checked>
+				        <label for="off5" class="switch-label switch-label-off">Off</label>
+				        <input type="radio" class="switch-input" name="view5" value="on5" id="on5">
+				        <label for="on5" class="switch-label switch-label-on">On</label>
+				        <span class="switch-selection"></span>
+						</div>
+					</div>
+					<div class="col-lg-1 col-lg-offset-3">
+				    <p align="center"><strong>Events</strong></p>
+				      <div class="switch switch-blue">
+				        <input type="radio" class="switch-input" name="view6" value="off6" id="off6" checked>
+				        <label for="off6" class="switch-label switch-label-off">Off</label>
+				        <input type="radio" class="switch-input" name="view6" value="on6" id="on6">
+				        <label for="on6" class="switch-label switch-label-on">On</label>
+				        <span class="switch-selection"></span>
+						</div>
 					</div>
 				</div>
-				<div class="span0">
-			    <p align="center"><strong>Drink</strong></p>
-			      <div class="switch switch-blue">
-			        <input type="radio" class="switch-input" name="view5" value="off5" id="off5" checked>
-			        <label for="off5" class="switch-label switch-label-off">Off</label>
-			        <input type="radio" class="switch-input" name="view5" value="on5" id="on5">
-			        <label for="on5" class="switch-label switch-label-on">On</label>
-			        <span class="switch-selection"></span>
+				<div class="row">
+					<div class="col-lg-1">
+				    <p align="center"><strong>Activites</strong></p>
+				      <div class="switch switch-blue">
+				        <input type="radio" class="switch-input" name="view7" value="off7" id="off7" checked>
+				        <label for="off7" class="switch-label switch-label-off">Off</label>
+				        <input type="radio" class="switch-input" name="view7" value="on7" id="on7">
+				        <label for="on7" class="switch-label switch-label-on">On</label>
+				        <span class="switch-selection"></span>
+						</div>
+					</div>
+					<div class="col-lg-1 col-lg-offset-3">
+				    <p align="center"><strong>Beauty/Spa</strong></p>
+				      <div class="switch switch-blue">
+				        <input type="radio" class="switch-input" name="view8" value="off8" id="off8" checked>
+				        <label for="off8" class="switch-label switch-label-off">Off</label>
+				        <input type="radio" class="switch-input" name="view8" value="on8" id="on8">
+				        <label for="on8" class="switch-label switch-label-on">On</label>
+				        <span class="switch-selection"></span>
+						</div>
+					</div>
+					<div class="col-lg-1 col-lg-offset-3">
+				    <p align="center"><strong>Home/Garden</strong></p>
+				      <div class="switch switch-blue">
+				        <input type="radio" class="switch-input" name="view9" value="off9" id="off9" checked>
+				        <label for="off9" class="switch-label switch-label-off">Off</label>
+				        <input type="radio" class="switch-input" name="view9" value="on9" id="on9">
+				        <label for="on9" class="switch-label switch-label-on">On</label>
+				        <span class="switch-selection"></span>
+						</div>
 					</div>
 				</div>
-				<div class="span0">
-			    <p align="center"><strong>Events</strong></p>
-			      <div class="switch switch-blue">
-			        <input type="radio" class="switch-input" name="view6" value="off6" id="off6" checked>
-			        <label for="off6" class="switch-label switch-label-off">Off</label>
-			        <input type="radio" class="switch-input" name="view6" value="on6" id="on6">
-			        <label for="on6" class="switch-label switch-label-on">On</label>
-			        <span class="switch-selection"></span>
+				<div class="row">
+					<div class="col-lg-1">
+				    <p align="center"><strong>Health/Fitness</strong></p>
+				      <div class="switch switch-blue">
+				        <input type="radio" class="switch-input" name="view10" value="off10" id="off10" checked>
+				        <label for="off10" class="switch-label switch-label-off">Off</label>
+				        <input type="radio" class="switch-input" name="view10" value="on10" id="on10">
+				        <label for="on10" class="switch-label switch-label-on">On</label>
+				        <span class="switch-selection"></span>
+						</div>
+					</div>
+					<div class="col-lg-1 col-lg-offset-3">
+				    <p align="center"><strong>Automotive</strong></p>
+				      <div class="switch switch-blue">
+				        <input type="radio" class="switch-input" name="view11" value="off11" id="off11" checked>
+				        <label for="off11" class="switch-label switch-label-off">Off</label>
+				        <input type="radio" class="switch-input" name="view11" value="on11" id="on11">
+				        <label for="on11" class="switch-label switch-label-on">On</label>
+				        <span class="switch-selection"></span>
+						</div>
+					</div>
+					<div class="col-lg-1 col-lg-offset-3">
+				    <p align="center"><strong>Shopping</strong></p>
+				      <div class="switch switch-blue">
+				        <input type="radio" class="switch-input" name="view12" value="off12" id="off12" checked>
+				        <label for="off12" class="switch-label switch-label-off">Off</label>
+				        <input type="radio" class="switch-input" name="view12" value="on12" id="on12">
+				        <label for="on12" class="switch-label switch-label-on">On</label>
+				        <span class="switch-selection"></span>
+						</div>
 					</div>
 				</div>
-				<div class="span0">
-			    <p align="center"><strong>Activites</strong></p>
-			      <div class="switch switch-blue">
-			        <input type="radio" class="switch-input" name="view7" value="off7" id="off7" checked>
-			        <label for="off7" class="switch-label switch-label-off">Off</label>
-			        <input type="radio" class="switch-input" name="view7" value="on7" id="on7">
-			        <label for="on7" class="switch-label switch-label-on">On</label>
-			        <span class="switch-selection"></span>
-					</div>
-				</div>
-				<div class="span0">
-			    <p align="center"><strong>Beauty & Spas</strong></p>
-			      <div class="switch switch-blue">
-			        <input type="radio" class="switch-input" name="view8" value="off8" id="off8" checked>
-			        <label for="off8" class="switch-label switch-label-off">Off</label>
-			        <input type="radio" class="switch-input" name="view8" value="on8" id="on8">
-			        <label for="on8" class="switch-label switch-label-on">On</label>
-			        <span class="switch-selection"></span>
-					</div>
-				</div>
-				<div class="span0">
-			    <p align="center"><strong>Home & Graden</strong></p>
-			      <div class="switch switch-blue">
-			        <input type="radio" class="switch-input" name="view9" value="off9" id="off9" checked>
-			        <label for="off9" class="switch-label switch-label-off">Off</label>
-			        <input type="radio" class="switch-input" name="view9" value="on9" id="on9">
-			        <label for="on9" class="switch-label switch-label-on">On</label>
-			        <span class="switch-selection"></span>
-					</div>
-				</div>
-				<div class="span0">
-			    <p align="center"><strong>Health & Fitness</strong></p>
-			      <div class="switch switch-blue">
-			        <input type="radio" class="switch-input" name="view10" value="off10" id="off10" checked>
-			        <label for="off10" class="switch-label switch-label-off">Off</label>
-			        <input type="radio" class="switch-input" name="view10" value="on10" id="on10">
-			        <label for="on10" class="switch-label switch-label-on">On</label>
-			        <span class="switch-selection"></span>
-					</div>
-				</div>
-				<div class="span0">
-			    <p align="center"><strong>Automotive</strong></p>
-			      <div class="switch switch-blue">
-			        <input type="radio" class="switch-input" name="view11" value="off11" id="off11" checked>
-			        <label for="off11" class="switch-label switch-label-off">Off</label>
-			        <input type="radio" class="switch-input" name="view11" value="on11" id="on11">
-			        <label for="on11" class="switch-label switch-label-on">On</label>
-			        <span class="switch-selection"></span>
-					</div>
-				</div>
-				<div class="span0">
-			    <p align="center"><strong>Shopping</strong></p>
-			      <div class="switch switch-blue">
-			        <input type="radio" class="switch-input" name="view12" value="off12" id="off12" checked>
-			        <label for="off12" class="switch-label switch-label-off">Off</label>
-			        <input type="radio" class="switch-input" name="view12" value="on12" id="on12">
-			        <label for="on12" class="switch-label switch-label-on">On</label>
-			        <span class="switch-selection"></span>
-					</div>
-				</div>
-				<p><%= link_to "Update", "#", class: 'btn-blue btn-small pull-right' %></p>
+				<p><%= link_to "Update", "#", class: 'btn-blue btn-lgall pull-right' %></p>
 			</div>
 
-			<div class="span2 well">
+			<div class="col-lg-2 col-lg-offset-1 well">
 				<h3 align="center">Promotions</h3>
 				<p><%= pluralize(@current_user.promotions.count, 'promotions') %></p>
 				<% @current_user.promotions.each do |promotion| %>
-					<%= promotion.title %>
+					<%= link_to promotion.title, edit_promotion_path(promotion) %>
+					<br>
 					<% end %>
-						<p><%= link_to "New Promotion", new_promotion_path, class: 'btn- blue btn-small pull-right' %></p>
+						<p><%= link_to "New Promotion", new_promotion_path, class: 'btn-blue btn-lgall pull-right' %></p>
 			</div>
 			</div>
