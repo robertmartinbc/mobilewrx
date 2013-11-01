@@ -8,7 +8,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'jquery-rails'
-gem 'bootstrap-sass', '~> 3.0.0.0'
+gem 'bootstrap-sass', '~> 3.0.1.0.rc'
 gem 'cancan'
 gem 'devise'
 gem 'figaro'
