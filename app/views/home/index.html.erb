@@ -1,7 +1,7 @@
 <div class="container">
 <div class="row">
 <div class="col-sm-12">
-  <div class="col-sm-8">
+  <div class="col-sm-7">
     <h4>Daily Deal</h4>
 </div>
 </div>
@@ -12,7 +12,7 @@
 </div>
   <% @random_promotions.each do |promotion| %>
   <br>
-    <div class="col-sm-8 pull-left image_container"><%= image_tag(promotion.image_url, class: "img-rounded") if promotion.image? %>
+    <div class="col-sm-9 pull-left image_container"><%= image_tag(promotion.image_url, class: "img-rounded") if promotion.image? %>
       <div>
         <h3><%= promotion.title %></h3>
       <div class="col-lg-6">

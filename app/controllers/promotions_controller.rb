@@ -31,7 +31,7 @@ end
 
   def edit
     @promotion = Promotion.find(params[:id])
-    authorize! :edit, @promotion, message: "You need to own the post to edit it."
+    # authorize! :edit, @promotion, message: "You need to own the promotion to edit it."
   end
 
   def update

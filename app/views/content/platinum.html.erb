@@ -137,7 +137,7 @@
 				<h3 align="center">Promotions</h3>
 				<p><%= pluralize(@current_user.promotions.count, 'promotions') %></p>
 				<% @current_user.promotions.each do |promotion| %>
-					<%= promotion.title %>
+					<%= link_to promotion.title, edit_promotion_path(promotion) %>
 					<br>
 					<% end %>
 						<p><%= link_to "New Promotion", new_promotion_path, class: 'btn-blue btn-small pull-right' %></p>
