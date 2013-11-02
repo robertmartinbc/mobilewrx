@@ -1,24 +1,20 @@
 <div class="container">
 	<div class="row">
-			<div class="col-lg-4 col-lg-offset-5">
+			<div class="col-lg-4 col-lg-offset-4">
 				<h2>Log in</h2>
 				<br>
 					</div>
-						<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
-		  		<div class="col-lg-6 col-lg-offset-5">
+						<%= simple_form_for resource, as: resource_name, url: session_path(resource_name), defaults: { wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control'} } do |f| %>
+		  		<div class="col-lg-3 col-lg-offset-4">
 		  			<%= f.input :email, label: false, :autofocus => true, placeholder: 'Email' %>
 		  		</div>
-		  		<div class="col-lg-4 col-lg-offset-5">
+		  		<div class="col-lg-3 col-lg-offset-4">
 		  			<%= f.input :password, label: false, placeholder: 'Password' %>
 		  		</div>
-		  		<div class="col-lg-4 col-lg-offset-5">
-		  			<%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-		  		</div>
-		  		<div class="col-lg-4 col-lg-offset-5">
-		  			<br>
+		  		<div class="col-lg-3 col-lg-offset-4">
 		  			 <%= f.button :submit, "Sign in", :class => 'btn-primary' %>
 		  		</div>
-		  		<div class="col-lg-4 col-lg-offset-5">
+		  		<div class="col-lg-4 col-lg-offset-4">
 		  			<br>
 		  			 <%= render "devise/shared/links" %>
 		  		</div>
