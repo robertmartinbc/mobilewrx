@@ -1,29 +1,29 @@
-<div id="welcome" class="page-header span12">
-  <h1 align="center">Client Site</h1>
-  <h3 align="center">Tap Into The Mobile Customer Base!</h3>
+<div id="welcome" class="page-header col-sm-12">
+  <h3 align="center">Tap Into Your Mobile Customer Base!</h3>
+  <br>
 </div>
 <center>
-<div class="row span12 plans">
-  <div class="span3 well">
+<div class="row col-sm-12 plans">
+  <div class="col-sm-3 col-sm-offset-1 well">
     <div class="plan"><h2>Silver</h2></div>
       <h3>$400/month</h3>
-        <P>Minimum 1 Month Campaign</p>
-          <p>Set Up & Distribution</p>
+        <P>1 Month Campaign</p>
+          <p>Setup & Distribution</p>
           <p>QR Code</p>
           <p>SMS/Email Push</p>
           <br>
-          <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn-blue btn-large' %>
+          <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn-blue btn-lg' %>
     </div>
-    <div class="span3 well featured">
+    <div class="col-sm-3 well featured">
       <div class="plan featured-plan"><h2>Gold</h2></div>
         <h3>$600/month</h3>
         <p>All Siver</p>
         <p>Featured Deal</p>
         <p>Monthly Tracking</p>
         <br>
-        <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn-blue btn-large' %>
+        <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn-blue btn-lg' %>
     </div>
-    <div class="span3 well">
+    <div class="col-sm-3 well">
       <div class="plan"><h2>Platinum</h2></div>
         <h3>$1000/month</h3>
         <p>All Gold</p>
@@ -31,6 +31,6 @@
         <p>Mobile Ticketing</p>
         <p>Scanning Equipment</p>
         <br>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn-blue btn-large' %>
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn-blue btn-lg' %>
   </div>
 </div>

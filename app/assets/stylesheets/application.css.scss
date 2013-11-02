@@ -13,7 +13,6 @@
  *= require_tree .
 */
 
-
 img {
     height: auto;
     max-width: 100%;
@@ -153,8 +152,7 @@ img {
 .thumbnail {
   background-color: #F7F8F8;
   height: auto;
-  width: auto;
-  display: block;
+  width: 100%;
 }
 
 .thumbnail1 {
