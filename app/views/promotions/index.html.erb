@@ -1,7 +1,7 @@
 <div class="comtainer">
-	<div class="row">
+	<div class="row col-md-12">
 		<% @promotions.each do |promotion| %>
-			<div class="col-sm-3 img-thumbnail">
+			<div class="col-md-3 img-thumbnail white-space">
 				<div>
 					<p><%= image_tag(promotion.image_url, class: "img-rounded") %></p>
 					<h4 align="center"><strong><%= promotion.title %></strong></h4>
@@ -15,5 +15,6 @@
 			</div>
 			<% end %>
 		</div>
+		<br>
 	</div>
 <center><p><%= will_paginate @promotions %></p>
