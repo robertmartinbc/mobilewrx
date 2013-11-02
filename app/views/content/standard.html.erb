@@ -149,15 +149,15 @@
 			</div>
 
 			<div class="col-sm-3 col-sm-offset-1">
-				<h3>Promotions</h3>
+				<h3>Purchases</h3>
 				<br>
-				<h4>You've created <%= pluralize(@current_user.promotions.count, 'promotions') %></h4>
+				<h4>You've purchased <%= pluralize(@current_user.promotions.count, 'promotions') %></h4>
 				<% @current_user.promotions.each do |promotion| %>
 					<%= link_to promotion.title, edit_promotion_path(promotion) %>
 					<br>
 					<br>
 					<% end %>
-						<p><%= link_to "New Promotion", new_promotion_path, class: 'btn-blue btn-sm pull-left' %></p>
+						<p><%= link_to "Purchases", new_promotion_path, class: 'btn-blue btn-sm pull-left' %></p>
 			</div>
 			</div>
 		</div>
