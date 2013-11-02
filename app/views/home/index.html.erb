@@ -15,26 +15,26 @@
     <div class="col-md-9 pull-left image_container"><%= image_tag(promotion.image_url, class: "img-rounded") if promotion.image? %>
       <div>
         <h3><%= promotion.title %></h3>
-      <div class="col-md-6">
+      <div class="col-md-5 col-md-offset-1">
         <h4>Details</h4>
         <p class="justify"><%= promotion.details %></p>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-5 col-md-offset-1">
         <h4>Highlights</h4>
         <p class="justify"><%= promotion.highlights %></p>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-5 col-md-offset-1">
         <h4>Company Information</h4>
         <p class="justify"><%= promotion.company_info %></p>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-5 col-md-offset-1">
         <h4>Fine Print</h4>
         <p class="justify"><%= promotion.fine_print %></p>
         <br>
       </div>
-      <div class="col-md-6 pull-left" id="googleMap" style="width:275px;height:250px;">
+      <div class="col-md-5 col-md-offset-1" id="googleMap" style="width:200px;height:200px;">
       </div>
-      <div class="col-md-6 pull-right">
+      <div class="col-md-5 pull-right col-md-offset-1">
         <br>
         <br>
 
