@@ -153,11 +153,11 @@
 				<br>
 				<h4>You've purchased <%= pluralize(@current_user.promotions.count, 'promotions') %></h4>
 				<% @current_user.promotions.each do |promotion| %>
-					<%= link_to promotion.title, edit_promotion_path(promotion) %>
+					<h4><%= link_to promotion.title, promotions_view_path %></h4>
 					<br>
 					<br>
 					<% end %>
-						<p><%= link_to "Purchases", new_promotion_path, class: 'btn-blue btn-sm pull-left' %></p>
+						<p><%= link_to "Purchases", '#', class: 'btn-blue btn-sm pull-left' %></p>
 			</div>
 			</div>
 		</div>
