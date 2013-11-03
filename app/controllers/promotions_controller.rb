@@ -30,7 +30,7 @@ class PromotionsController < ApplicationController
 end
 
   def edit
-    @promotion = Promotion.find(params[:id])
+    @promotion = Promotion.find((params[:id]))
     # authorize! :edit, @promotion, message: "You need to own the promotion to edit it."
   end
 
@@ -43,5 +43,9 @@ end
       flash[:error] = "There was an error saving the promotion. Please try again."
       render :new
     end
+  end
+
+  def view
+    @promotion = Promotion.find(params[:id])
   end
 end
