@@ -153,7 +153,7 @@
 				<br>
 				<h4>You've created <%= pluralize(@current_user.promotions.count, 'promotions') %></h4>
 				<% @current_user.promotions.each do |promotion| %>
-					<%= link_to promotion.title, edit_promotion_path(promotion) %>
+					<h4><%= link_to promotion.title, promotions_view_path %></h4>
 					<br>
 					<br>
 					<% end %>

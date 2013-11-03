@@ -15,19 +15,19 @@
     <div class="col-md-9 pull-left image_container"><%= image_tag(promotion.image_url, class: "img-rounded") if promotion.image? %>
       <div>
         <h3><%= promotion.title %></h3>
-      <div class="col-md-4 col-md-offset-1">
+      <div class="col-md-5">
         <h4>Details</h4>
         <p class="justify"><%= promotion.details %></p>
       </div>
-      <div class="col-md-4 col-md-offset-1">
+      <div class="col-md-5">
         <h4>Highlights</h4>
         <p class="justify"><%= promotion.highlights %></p>
       </div>
-      <div class="col-md-4 col-md-offset-1">
+      <div class="col-md-5">
         <h4>Company Information</h4>
         <p class="justify"><%= promotion.company_info %></p>
       </div>
-      <div class="col-md-4 col-md-offset-1">
+      <div class="col-md-5">
         <h4>Fine Print</h4>
         <p class="justify"><%= promotion.fine_print %></p>
         <br>

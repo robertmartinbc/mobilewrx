@@ -2,7 +2,7 @@ Mobilewrx::Application.routes.draw do
 
   get "account/show"
 
-  get "promotions/view", to: 'promotions#view'
+  get "/promotions/view/", to: 'promotions#view'
 
   resources :charges
 

@@ -46,6 +46,6 @@ end
   end
 
   def view
-    @promotion = Promotion.find(params[:id])
+    @promotion = Promotion.find(3)
   end
 end
