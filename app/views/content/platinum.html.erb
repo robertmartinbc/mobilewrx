@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-3">
-			<h3>Profile</h3>
+			<h3>My Profile</h3>
 			<br>
 			<p class="img-rounded img-thumbnail"><%= image_tag(current_user.avatar.thumb.url) %></p>
 			<h4><%= @current_user.name %></h4>
@@ -11,7 +11,7 @@
 			<p><%= link_to "Edit", edit_user_registration_path , class: 'btn-blue btn-sm pull-left' %></p>
 		</div>
 		<div class="col-sm-4 col-sm-offset-1">
-			<h3>Preferences</h3>
+			<h3>My Preferences</h3>
 			<br>
 				<div class="row">
 				  <div class="col-sm-2">
@@ -149,7 +149,7 @@
 			</div>
 
 			<div class="col-sm-3 col-sm-offset-1">
-				<h3>Promotions</h3>
+				<h3>My Promotions</h3>
 				<br>
 				<h4>You've created <%= pluralize(@current_user.promotions.count, 'promotions') %></h4>
 					<% @current_user.promotions.each do |promotion| %>
