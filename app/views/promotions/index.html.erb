@@ -17,4 +17,4 @@
 		</div>
 		<br>
 	</div>
-<center><p><%= will_paginate @promotions %></p>
+<center><p><%= will_paginate(@promotions, :renderer => WillPaginate::ActionView::LinkRenderer) %></p>

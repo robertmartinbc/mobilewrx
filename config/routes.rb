@@ -1,5 +1,9 @@
 Mobilewrx::Application.routes.draw do
 
+  match "terms_service" => "home#terms_service", via: :get
+
+  match "privacy_policy" => "home#privacy_policy", via: :get
+
   get "account/show"
 
   get "/promotions/view/", to: 'promotions#view'

@@ -121,7 +121,18 @@
           </div>
           <footer>
             <center>
-            Privacy Policy - Terms of Service - FAQ - Contact Us
+              <div>
+                <%= link_to 'Privacy Policy', privacy_policy_path %>
+              </div>
+              <div>
+                <%= link_to 'Terms of Service', terms_service_path %>
+              </div>
+              <div>
+                <%= link_to 'FAQ', faq_path %>
+              </div>
+              <div>
+                <%= link_to 'Contact Us', contact_path %>
+              </div>
           </center>
             <%= yield :scripts %>
           </footer>
