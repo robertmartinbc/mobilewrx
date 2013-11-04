@@ -1,19 +1,19 @@
 <div class="container">
 	<div class="row">
-		<div class="span12">
+		<div class="col-sm-8 col-sm-offset-2">
 			<div class="span4">
 			<div class="panel-group" id="accordion">
 			  <div class="panel panel-default">
 			    <div class="panel-heading">
 			      <h5 class="panel-title">
 			        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-			          How do I buy the daily deal?
+			          How can I buy the daily deal?
 			        </a>
 			      </h5>
 			    </div>
 			    <div id="collapseOne" class="panel-collapse collapse">
 			      <div class="panel-body">
-			        <h5 class="justify">Login to your account, then click "Buy Now" and complete the payment form. Your couvon will be waiting in your account within 15 minutes. If you do not have an account yet, register here.</h5>
+			        <h5 class="justify">Login to your account, choose your promotion, then click "Buy Now" and complete the payment form. Your promotion will be available for use in your account. If you do not have an account at this time, please register <%= link_to 'here.', customer_subscription_path %></h5>
 			      </div>
 			    </div>
 			  </div>
@@ -27,7 +27,7 @@
 			    </div>
 			    <div id="collapseTwo" class="panel-collapse collapse">
 			      <div class="panel-body">
-			        <h5 class="justify">Yes. Please Login, then click on "Buy Now".</h5>
+			        <h5 class="justify">Yes. Please Login, choose your promotion, then click on "Buy Now".</h5>
 			      </div>
 			    </div>
 			  </div>
@@ -41,11 +41,11 @@
 			    </div>
 			    <div id="collapseThree" class="panel-collapse collapse">
 			      <div class="panel-body">
-			        <h5 class="justify">Please click here.</h5>
+			        <h5 class="justify">Please click <%= link_to 'here.', new_password_path(:user) %><br />
+						</h5>
 			      </div>
 			    </div>
 			  </div>
-			</div>
 			<div class="panel panel-default">
 			    <div class="panel-heading">
 			      <h5 class="panel-title">
@@ -56,7 +56,7 @@
 			    </div>
 			    <div id="collapseFour" class="panel-collapse collapse">
 			      <div class="panel-body">
-			        <h5 class="justify">Make sure you are logged into your MobileWRX account. Make sure you have entered all of your information correctly without any typos. Make sure you are using a valid credit card. If that still does not work, often trying a different credit card will work.</h5>
+			        <h5 class="justify">In order to purchase a promotion, you will need to have a registered account. Please  ensure you are registered and logged into your MobileWRX account. Please ensure you are using a valid credit card.</h5>
 			      </div>
 			    </div>
 			  </div>
@@ -87,6 +87,7 @@
 			        <h5 class="justify">Please contact our Customer Service Team with the new name you would like on the promotion.  Please note that the name on the promotion is only cosmetic and is not needed when being redeemed.</h5>
 			      </div>
 			    </div>
+			</div>
 			    <div class="panel panel-default">
 				    <div class="panel-heading">
 				      <h5 class="panel-title">
@@ -129,7 +130,6 @@
 				      </div>
 				    </div>
 				  </div>
-				</div>
 				<div class="panel panel-default">
 				    <div class="panel-heading">
 				      <h5 class="panel-title">
@@ -171,6 +171,7 @@
 				        <h5 class="justify">You and your friend must both follow these instructions to receive referral credits.</h5>
 				      </div>
 				    </div>
+				</div>
 				    <div class="panel panel-default">
 				    <div class="panel-heading">
 				      <h5 class="panel-title">
