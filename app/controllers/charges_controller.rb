@@ -4,7 +4,7 @@ class ChargesController < ApplicationController
 
 	def create
 		# Amount in cents
-		@amount = 500
+		@amount = @promotion.price
 
 		customer = Stripe::Customer.create(
 			:email => 'example@stripe.com',
@@ -12,7 +12,7 @@ class ChargesController < ApplicationController
 			)
 		charge = Stripe::Charge.create(
 			:customer    => customer.id,
-			:amount      => @amount,
+			:amount      => @promotion.price,
 			:description => 'Rails Stripe customer',
 			:currency    => 'usd'
 			)
@@ -21,3 +21,11 @@ class ChargesController < ApplicationController
 		redirect_to charges_path
 	end
 end
+
+# def create
+#       promotion = Promotion.find(params[:promotion_id])
+#
+#       charge = Stripe::Charge.create(amount: promotion.amount, customer: current_user.customer_id)
+#
+#      user.purchased_promotions.create!(promotion_id: promotion.id, stripe_charge_id: charge.transaction_id)
+#end

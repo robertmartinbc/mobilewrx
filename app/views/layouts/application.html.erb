@@ -99,6 +99,7 @@
         <br>
         <br>
         <br>
+        <br>
       <div class="col-md-12">
       <div class="col-md-10">
       <strong> <%= image_tag("mobilewrxlogo.jpeg") %>The World At Your Fingertips</strong>
@@ -121,18 +122,19 @@
           </div>
           <footer>
             <center>
-              <div>
-                <%= link_to 'Privacy Policy', privacy_policy_path %>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="col-sm-12">
+                    <br>
+                    <br>
+                    <%= link_to 'Privacy Policy', privacy_policy_path %> |
+                    <%= link_to 'Terms of Service', terms_service_path %> |
+                    <%= link_to 'FAQ', faq_path %> |
+                    <%= link_to 'Contact Us', contact_path %>
+                  </div>
+                </div>
               </div>
-              <div>
-                <%= link_to 'Terms of Service', terms_service_path %>
-              </div>
-              <div>
-                <%= link_to 'FAQ', faq_path %>
-              </div>
-              <div>
-                <%= link_to 'Contact Us', contact_path %>
-              </div>
+              <br>
           </center>
             <%= yield :scripts %>
           </footer>
