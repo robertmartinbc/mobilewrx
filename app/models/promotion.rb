@@ -17,4 +17,8 @@ class Promotion < ActiveRecord::Base
   validates :website, presence: true
   validates :image, presence: true
   validates :qrcode, presence: true
+
+  def stripe_price
+    price * 100
+  end
 end

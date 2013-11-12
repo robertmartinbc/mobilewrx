@@ -3,8 +3,9 @@ class ChargesController < ApplicationController
 	end
 
 	def create
+		@promotion = Promotion.find(params[:promotion_id])
 		# Amount in cents
-		@amount = @promotion.price
+		@amount = @promotion.stripe_price
 
 		customer = Stripe::Customer.create(
 			:email => 'example@stripe.com',
@@ -12,11 +13,10 @@ class ChargesController < ApplicationController
 			)
 		charge = Stripe::Charge.create(
 			:customer    => customer.id,
-			:amount      => @promotion.price,
+			:amount      => @promotion.stripe_price,
 			:description => 'Rails Stripe customer',
 			:currency    => 'usd'
 			)
-		binding.pry
 	rescue Stripe::CardError => e
 		flash[:error] = e.message
 		redirect_to charges_path

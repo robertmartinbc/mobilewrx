@@ -47,10 +47,6 @@ end
   end
 
   def view
-    @promotion = Promotion.find(1)
-  end
-
-  def stripe_price
-    price * 100
+    @promotion = Promotion.find(3)
   end
 end
