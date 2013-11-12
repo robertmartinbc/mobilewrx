@@ -1,26 +1,26 @@
 class ChargesController < ApplicationController
-	def new
-	end
+        def new
+        end
 
-	def create
-		@promotion = Promotion.find(params[:promotion_id])
-		# Amount in cents
-		@amount = @promotion.stripe_price
+        def create
+                @promotion = Promotion.find(params[:promotion_id])
+                # Amount in cents
+                @amount = @promotion.stripe_price
 
-		customer = Stripe::Customer.create(
-			:email => 'example@stripe.com',
-			:card => params[:stripeToken]
-			)
-		charge = Stripe::Charge.create(
-			:customer    => customer.id,
-			:amount      => @promotion.stripe_price,
-			:description => 'Rails Stripe customer',
-			:currency    => 'usd'
-			)
-	rescue Stripe::CardError => e
-		flash[:error] = e.message
-		redirect_to charges_path
-	end
+                customer = Stripe::Customer.create(
+                        :email => 'example@stripe.com',
+                        :card => params[:stripeToken]
+                        )
+                charge = Stripe::Charge.create(
+                        :customer    => customer.id,
+                        :amount      => @promotion.stripe_price,
+                        :description => 'Rails Stripe customer',
+                        :currency    => 'usd'
+                        )
+        rescue Stripe::CardError => e
+                flash[:error] = e.message
+                redirect_to charges_path
+        end
 end
 
 # def create

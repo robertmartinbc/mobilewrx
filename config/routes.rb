@@ -1,5 +1,10 @@
 Mobilewrx::Application.routes.draw do
 
+
+  match "create" => "charges#create", via: :get
+
+  match "new" => "charges#new", via: :get
+
   match "terms_service" => "home#terms_service", via: :get
 
   match "privacy_policy" => "home#privacy_policy", via: :get
