@@ -5,6 +5,8 @@ class Promotion < ActiveRecord::Base
 
   has_many :purchases
 
+  has_many :redemptions
+
   default_scope order('created_at DESC')
 
   mount_uploader :image, ImageUploader

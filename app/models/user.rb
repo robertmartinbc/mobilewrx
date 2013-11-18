@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :stripe_token, :coupon, :avatar, :purchase_id
   has_many :promotions
   has_many :purchases
+  has_many :redemptions
   mount_uploader :avatar, AvatarUploader
   attr_accessor :stripe_token, :coupon
   before_save :update_stripe

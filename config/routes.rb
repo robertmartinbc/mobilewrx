@@ -1,6 +1,7 @@
 Mobilewrx::Application.routes.draw do
 
 
+
   match "create" => "charges#create", via: :get
 
   match "new" => "charges#new", via: :get
@@ -11,11 +12,14 @@ Mobilewrx::Application.routes.draw do
 
   get "account/show"
 
-  get "/promotions/view/", to: 'promotions#view'
+  get "/promotions/view/:id", to: 'promotions#view'
 
   resources :charges
 
   resources :promotions
+
+  # resources :redemptions, only: [:create]
+  post "/redemptions/:promotion_id", to: "redemptions#create"
 
   match "client_subscription" => "home#client_subscription", via: :get
 

@@ -46,6 +46,11 @@ end
   end
 
   def view
-    @promotion = Promotion.find(3)
+    puts "======================"
+    p params
+    @promotion = Promotion.find(params[:id])
+  end
+
+  def expiration_date
   end
 end

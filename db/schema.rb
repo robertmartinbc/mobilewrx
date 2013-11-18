@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131023153031) do
+ActiveRecord::Schema.define(:version => 20131118015839) do
 
   create_table "promotions", :force => true do |t|
     t.string   "title"
@@ -34,11 +34,18 @@ ActiveRecord::Schema.define(:version => 20131023153031) do
   add_index "promotions", ["user_id"], :name => "index_promotions_on_user_id"
 
   create_table "purchases", :force => true do |t|
-    t.integer  "purchase_id"
+    t.integer  "promotion_id"
     t.integer  "user_id"
     t.string   "stripe_reference_id"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+  end
+
+  create_table "redemptions", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "promotion_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "roles", :force => true do |t|
