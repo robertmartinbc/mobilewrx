@@ -3,7 +3,7 @@
 		<div class="col-sm-3">
 			<h3>Profile</h3>
 			<br>
-			<p><%= image_tag(current_user.avatar.thumb.url) %></p>
+			<p class="img-rounded img-thumbnail"><%= image_tag(current_user.avatar.thumb.url) %></p>
 			<h4><%= @current_user.name %></h4>
 			<h4><%= @current_user.email %></h4>
 			<h4><%= @current_user.roles.first.name.titleize %></h4>
