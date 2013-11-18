@@ -153,7 +153,7 @@
 				<br>
 				<h4>You've purchased <%= pluralize(@current_user.purchases.count, 'promotions') %></h4>
 				<% @current_user.purchases.each do |purchase| %>
-					<h4><%= link_to purchase.promotion.title, "/promotions/view/#{purchase.promotion_id}"  %></h4>
+					<p><%= link_to purchase.promotion.title, "/promotions/view/#{purchase.promotion_id}"  %></p>
 					<br>
 					<br>
 					<% end %>

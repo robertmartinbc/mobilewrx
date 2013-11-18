@@ -153,7 +153,8 @@
 				<br>
 				<h4>You've created <%= pluralize(@current_user.promotions.count, 'promotions') %></h4>
 				<% @current_user.promotions.each do |promotion| %>
-					<%= link_to promotion.title, edit_promotion_path(promotion) %>
+					<p><%= link_to promotion.title, "/promotions/view/#{promotion.id}" %></p>
+					<%= image_tag(promotion.image_url, class: "img-rounded") if promotion.image? %>
 					<br>
 					<br>
 					<% end %>
