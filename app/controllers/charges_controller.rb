@@ -17,9 +17,7 @@ class ChargesController < ApplicationController
                         :description => 'Rails Stripe customer',
                         :currency    => 'usd'
                         )
-                puts "================="
-                p params
-                Purchase.create(promotion_id: @promotion.id, user_id: current_user.id, stripe_reference_id: params[:stripeToken])
+                Purchase.create(promotion_id: @promotion.id, user_id: current_user.id, stripe_reference_id: params[:stripe_token])
         rescue Stripe::CardError => e
                 flash[:error] = e.message
                 redirect_to charges_path
