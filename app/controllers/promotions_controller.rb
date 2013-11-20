@@ -46,8 +46,10 @@ end
   end
 
   def view
-    puts "======================"
-    p params
+    @promotion = Promotion.find(params[:id])
+  end
+
+  def client_view
     @promotion = Promotion.find(params[:id])
   end
 
