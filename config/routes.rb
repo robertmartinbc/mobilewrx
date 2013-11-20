@@ -19,7 +19,7 @@ Mobilewrx::Application.routes.draw do
   resources :promotions
 
   # resources :redemptions, only: [:create]
-  post "/redemptions/:promotion_id", to: "redemptions#create"
+  post "/redemptions/:promotion_id", to: "redemptions#create", as: "redemption"
 
   match "client_subscription" => "home#client_subscription", via: :get
 
