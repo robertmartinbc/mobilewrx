@@ -1,6 +1,6 @@
 class Redemption < ActiveRecord::Base
   attr_accessible :promotion_id, :user_id
-
+# belongs_to :purchase
   belongs_to :promotion
 
   belongs_to :user
