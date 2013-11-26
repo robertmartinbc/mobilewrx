@@ -9,6 +9,7 @@ end
 gem 'sass-rails',   '~> 3.2.3'
 gem 'jquery-rails'
 gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', require: 'bootstrap-rails'
+gem 'bootstrap-datepicker-rails'
 gem 'cancan'
 gem 'devise'
 gem 'figaro'

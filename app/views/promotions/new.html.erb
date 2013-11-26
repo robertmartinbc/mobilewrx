@@ -14,10 +14,12 @@
 				</div>
 				<div><%= f.input :price, label: false, placeholder: 'Price' %>
 				</div>
-				<div><%= f.input :purchase_expiration, as: :date, label: false, placeholder: 'Purchase Expiration Date' %>
+				<div><%= f.text_field :purchase_expiration, :id => "datepicker", label: false, placeholder: 'Purchase Expiration Date' %>
 				</div>
-				<div><%= f.input :expiration, as: :date, label: false, placeholder: 'Expiry Date' %>
+				<br>
+				<div><%= f.text_field :expiration, :id => "datepicker1", label: false, placeholder: 'Expiry Date' %>
 				</div>
+				<br>
 				<div><%= f.input :website, label: false, placeholder: 'Website' %>
 				</div>
 				<div><%= f.file_field :image %><font color="blue">*Upload Image</font>
@@ -39,3 +41,11 @@
 </div>
 </div>
 </div>
+
+<script>
+$('#datepicker').datepicker({format: 'yyyy-mm-dd'});
+</script>
+
+<script>
+$('#datepicker1').datepicker({format: 'yyyy-mm-dd'});
+</script>
