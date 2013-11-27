@@ -1,14 +1,21 @@
 class RedemptionsController < ApplicationController
 
 	def create
-    @promotion = Promotion.find(params[:promotion_id])
-
-    if Redemption.unique(@promotion.id, current_user.id)
-      @promotion.redemptions.create(user_id: current_user.id)
-      flash[:notice] = "#{@promotion.title} was redeemed."
+    @purchase = Purchase.find(params[:purchase_id])
+    if Redemption.unique(@purchase.id, current_user.id)
+      @redemption = Redemption.new(user_id: current_user.id, purchase_id: @purchase.id)
+      if @redemption.save
+        flash[:notice] = "#{@purchase.promotion.title} was redeemed."
+      else
+        flash[:error] = "#{@purchase.promotion.title} was not redeemed."
+      end
     else
-      flash[:error] = "#{@promotion.title} has already been redeemed!"
+      flash[:error] = "#{@purchase.promotion.title} was already redeemed."
     end
     redirect_to root_path
 	end
+
+  def show
+    @redemption = Redemption.find(params[:id])
+  end
 end

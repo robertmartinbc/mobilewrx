@@ -5,5 +5,5 @@ class Purchase < ActiveRecord::Base
 
   belongs_to :promotion
 
-  #has_one :redemption
+  has_one :redemption
 end

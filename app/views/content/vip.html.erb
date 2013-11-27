@@ -153,7 +153,7 @@
 				<br>
 				<h4>You've purchased <%= pluralize(@current_user.purchases.count, 'promotions') %></h4>
 				<% @current_user.purchases.each do |purchase| %>
-					<p><%= link_to purchase.promotion.title, "/promotions/view/#{purchase.promotion_id}"  %></p>
+					<p><%= link_to purchase.promotion.title, "/purchases/show/#{purchase.promotion_id}"  %></p>
 					<%= image_tag(purchase.promotion.image_url, class: "img-rounded") %>
 					<br>
 					<br>

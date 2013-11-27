@@ -22,8 +22,12 @@ Mobilewrx::Application.routes.draw do
 
   resources :promotions
 
+  resources :purchases
+
+  resources :redemptions
+
   # resources :redemptions, only: [:create]
-  post "/redemptions/:promotion_id", to: "redemptions#create", as: "redemption"
+  post "/redemptions/:purchase_id", to: "redemptions#create", as: "redemption"
 
   match "client_subscription" => "home#client_subscription", via: :get
 
@@ -57,5 +61,7 @@ Mobilewrx::Application.routes.draw do
     put 'update_plan', :to => 'registrations#update_plan'
     put 'update_card', :to => 'registrations#update_card'
   end
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :redemptions, only: [:index, :show], controller: "users/redemptions"
+  end
 end

@@ -6,7 +6,7 @@ class Promotion < ActiveRecord::Base
   has_many :purchases
 
 #Need to remove redemption from promotion
-  has_many :redemptions
+
 
   default_scope order('created_at DESC')
 
@@ -20,6 +20,10 @@ class Promotion < ActiveRecord::Base
   validates :website, presence: true
   validates :image, presence: true
   validates :qrcode, presence: true
+
+  def self.active
+    where("purchase_expiration > ?", Date.today)
+  end
 
   def stripe_price
     price * 100

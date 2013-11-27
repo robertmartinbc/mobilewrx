@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(:version => 20131126022856) do
 
   create_table "redemptions", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "promotion_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "purchase_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "roles", :force => true do |t|

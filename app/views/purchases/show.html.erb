@@ -1,0 +1,15 @@
+<center>
+<div class="row">
+  <div class="col-lg-3 img-thumbnail">
+    <p><%= image_tag(@promotion.image_url, class: "img-rounded") if @promotion.image? %></p>
+    <br>
+    <p><strong align="center"><%= @promotion.description %></strong></p>
+     <p align="center">Expires: <%= @promotion.expiration %></p>
+      <p align="center"><%= image_tag(@promotion.qrcode_url, class: "img-rounded") if @promotion.qrcode? %>
+        <br>
+        <br>
+      </p>
+      <p align="center"><%= link_to "Redeem", redemption_path(@purchase.id), method: :post, class: "btn-blue btn-lg" %></p>
+          <br>
+  </div>
+</center>
