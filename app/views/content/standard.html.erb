@@ -1,7 +1,29 @@
+<br>
+<br>
 <div class="container">
-	<div class="row">
-		<div class="col-sm-3">
-			<h3>Profile</h3>
+  <div class="row">
+    <div class="col-sm-9 col-sm-offset-1">
+
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+		  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+				<script>
+        $(function() {
+          $( "#tabs" ).tabs();
+        });
+        </script>
+
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Profile</a></li>
+    <li><a href="#tabs-2">Preferences</a></li>
+    <li><a href="#tabs-3">Purchases</a></li>
+    <li><a href="#tabs-4">Redemptions</a></li>
+  </ul>
+  <div id="tabs-1">
+			<h3>Hi <%= @current_user.name %>, it's good to see you again.</h3>
 			<br>
 			<p class="img-rounded img-thumbnail"><%= image_tag(current_user.avatar.thumb.url) %></p>
 			<h4><%= @current_user.name %></h4>
@@ -9,9 +31,9 @@
 			<h4><%= @current_user.roles.first.name.titleize %></h4>
 			<h4><%= @current_user.last_4_digits %></h4>
 			<p><%= link_to "Edit", edit_user_registration_path , class: 'btn-blue btn-sm pull-left' %></p>
-		</div>
-		<div class="col-sm-4 col-sm-offset-1">
-			<h3>Preferences</h3>
+      <br>
+  </div>
+  <div id="tabs-2">
 			<br>
 				<div class="row">
 				  <div class="col-sm-2">
@@ -146,22 +168,26 @@
 					</div>
 				</div>
 				<p><%= link_to "Update", "#", class: 'btn-blue btn-sm pull-left' %></p>
-			</div>
-
-			<div class="col-sm-3 col-sm-offset-1">
-				<h3>Purchases</h3>
-				<br>
-				<h4>You've purchased <%= pluralize(@current_user.purchases.count, 'promotions') %></h4>
-				<h4><%= link_to "You've redeemed #{pluralize(@current_user.redemptions.count, 'purchases')}", user_redemptions_path(current_user) %></h4>
-				<% @current_user.purchases.each do |purchase| %>
-				<% unless purchase.redemption %>
-					<p><%= link_to purchase.promotion.title, purchase_path(purchase)  %></p>
-					<%= image_tag(purchase.promotion.image_url, class: "img-rounded") %>
-					<br>
-					<br>
-				<% end %>
-					<% end %>
-						<p><%= link_to "Purchases", '#', class: 'btn-blue btn-sm pull-left' %></p>
-			</div>
-			</div>
-		</div>
+        <br>
+  </div>
+  <div id="tabs-3">
+        <br>
+        <h4>You've purchased <%= pluralize(@current_user.purchases.count, 'promotions') %>. Below is a list of promotions you have yet to redeem.</h4>
+        <% @current_user.purchases.each do |purchase| %>
+        <% unless purchase.redemption %>
+          <p><%= link_to purchase.promotion.title, purchase_path(purchase)  %></p>
+          <%= image_tag(purchase.promotion.image_url, class: "img-rounded") %>
+          <br>
+          <br>
+        <% end %>
+          <% end %>
+  </div>
+  <div id="tabs-4">
+        <br>
+        <h4><%= "You've redeemed #{pluralize(@current_user.redemptions.count, 'purchases')}" %></h4>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
