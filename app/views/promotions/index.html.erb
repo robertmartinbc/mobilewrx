@@ -1,4 +1,17 @@
 <div class="container">
+	<div class="row">
+		<div class="col-sm-3 col-sm-offset-9">
+			<%= form_tag promotions_path, method: :get do %>
+		  <p>
+		    <%= text_field_tag :search, params[:search], placeholder: 'Search for promotions' %>
+		    <%= submit_tag "Search", name: nil %>
+		  </p>
+		<% end %>
+		</div>
+	</div>
+</div>
+
+<div class="container">
 	<div class="row col-md-12">
 		<% @promotions.each do |promotion| %>
 			<div class="col-md-3 img-thumbnail white-space">

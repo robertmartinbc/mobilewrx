@@ -28,4 +28,12 @@ class Promotion < ActiveRecord::Base
   def stripe_price
     price * 100
   end
+
+  def self.search(search)
+  if search
+    where 'title LIKE ?', "%#{search}%"
+  else
+    scoped
+  end
+end
 end
