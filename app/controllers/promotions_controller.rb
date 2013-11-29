@@ -17,6 +17,7 @@ class PromotionsController < ApplicationController
 
   def new
     @promotion = Promotion.new
+    authorize! :create, Promotion, message: "You need to sign up as a client to create promotions."
   end
 
   def create
