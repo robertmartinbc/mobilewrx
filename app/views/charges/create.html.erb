@@ -113,8 +113,31 @@
 </div>
 <div class="row">
   <div class="container">
-  <div class="col-md-4 col-md-offset-4">
-  <h2> Thanks, you paid <strong>$<%= @promotion.price %></strong>!</h2>
+    <h3 align="center"> Thank you for your purchase, <%= @current_user.name %></h3>
+    <br>
+    <center>
+  <div class="img-thumbnail">
+    <p><%= image_tag(@promotion.image_url, class: "img-rounded") %></p>
+    <p align="center"><strong><%= @promotion.title %></strong></p>
+    <p align="center"><%= @promotion.description %></p>
+    <p align="center"><%= @promotion.expiration %></p>
+    <p align="center">$<%= @promotion.price %></p>
+    <br>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <h3 align="center">What would you like to do next?</h3>
+    <br>
+  </div>
+  <div class="container">
+  <div class="row">
+    <center>
+      <%= link_to "Continue Buying", promotions_path , class: 'btn-blue btn-lg' %>
+      <%= link_to "View Account", account_show_path , class: 'btn-blue btn-lg' %>
+    </div>
+  </div>
+</div>
 </div>
 </div>
 </div>
