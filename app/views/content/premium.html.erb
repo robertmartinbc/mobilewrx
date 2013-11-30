@@ -31,7 +31,7 @@
       <h4><%= @current_user.email %></h4>
       <h4><%= @current_user.roles.first.name.titleize %></h4>
       <h4><%= @current_user.last_4_digits %></h4>
-      <p><%= link_to "Edit", edit_user_registration_path , class: 'btn-blue btn-sm pull-left' %></p>
+      <p><%= link_to "Edit", edit_user_registration_path , class: 'btn-blue btn-lg pull-left' %></p>
       <br>
   </div>
   <div id="tabs-2">
@@ -168,24 +168,52 @@
             </div>
           </div>
         </div>
-        <p><%= link_to "Update", "#", class: 'btn-blue btn-sm pull-left' %></p>
+        <p><%= link_to "Update", "#", class: 'btn-blue btn-lg pull-left' %></p>
         <br>
   </div>
   <div id="tabs-3">
         <br>
         <h4>You've purchased <%= pluralize(@current_user.purchases.count, 'promotions') %>. Below is a list of promotions you have yet to redeem.</h4>
+        <br>
+        <div class="container">
+          <div class="row col-sm-12">
         <% @current_user.purchases.each do |purchase| %>
         <% unless purchase.redemption %>
-          <p><%= link_to purchase.promotion.title, purchase_path(purchase)  %></p>
-          <%= image_tag(purchase.promotion.image_url, class: "img-rounded") %>
+        <div class="col-sm-2 thumbnail">
+          <div>
+          <p align="center"><%= link_to purchase.promotion.title, purchase_path(purchase)  %></p>
+          <p align="center"><%= image_tag(purchase.promotion.image_url, class: "img-rounded") %></p>
+          <p align="center"><%= purchase.promotion.expiration %></p>
+          <p align="center">$<%= purchase.promotion.price %></p>
+          <p align="center"><%= image_tag(purchase.promotion.qrcode_url, class: "img-rounded qrcode") %>
           <br>
           <br>
+      </div>
+  </div>
         <% end %>
           <% end %>
+          <br>
   </div>
+</div>
+</div>
+  <br>
   <div id="tabs-4">
+        <h4>You've redeemed <%= pluralize(@current_user.redemptions.count, 'purchases') %></h4>
         <br>
-        <h4><%= "You've redeemed #{pluralize(@current_user.redemptions.count, 'purchases')}" %></h4>
+        <div class="container">
+          <div class="row col-sm-12">
+        <% @current_user.redemptions.each do |redemption| %>
+        <div class="col-sm-2 thumbnail">
+          <div>
+          <p align="center"><%= redemption.purchase.promotion.title %></p>
+          <p align="center"><%= image_tag(redemption.purchase.promotion.image_url, class: "img-rounded")%></p>
+          <p align="center"><%= redemption.purchase.promotion.expiration %></p>
+        <p align="center">$<%= redemption.purchase.promotion.price %></p>
+    </div>
+</div>
+        <% end %>
+        <br>
+    </div>
   </div>
 </div>
 </div>

@@ -27,20 +27,35 @@
 			<h4><%= @current_user.email %></h4>
 			<h4><%= @current_user.roles.first.name.titleize %></h4>
 			<h4><%= @current_user.last_4_digits %></h4>
-			<p><%= link_to "Edit", edit_user_registration_path , class: 'btn-blue btn-sm pull-left' %></p>
+			<p><%= link_to "Edit", edit_user_registration_path , class: 'btn-blue btn-lg pull-left' %></p>
+      <br>
       <br>
   </div>
   <div id="tabs-2">
         <h4>You've created <%= pluralize(@current_user.promotions.count, 'promotions') %></h4>
         <br>
+        <div class="container">
+        	<div class="row col-sm-12">
 				<% @current_user.promotions.each do |promotion| %>
-					<p><%= link_to promotion.title, "/promotions/client_view/#{promotion.id}" %></p>
-					<%= image_tag(promotion.image_url, class: "img-rounded") if promotion.image? %>
-					<br>
-					<br>
+					<div class="col-sm-2 thumbnail">
+						<div>
+					<p align="center"><%= link_to promotion.title, "/promotions/client_view/#{promotion.id}" %></p>
+					<p align="center"><%= image_tag(promotion.image_url, class: "img-rounded") if promotion.image? %></p>
+					<p align="center"><%= promotion.expiration %></p>
+					<p align="center">$<%= promotion.price %></p>
+					<p align="center"><%= image_tag(promotion.qrcode_url, class: "img-rounded qrcode") %>
+					<p align="center"><%= "#{promotion.purchases.count} bought" %></p>
+				</div>
+			</div>
 					<% end %>
-						<p><%= link_to "New Promotion", new_promotion_path, class: 'btn-blue btn-sm pull-left' %></p>
-						<br>
+					<br>
+				</div>
+				<br>
+				<div class="row">
+						<% if can? :create, Promotion %>
+							<p><%= link_to "New Promotion", new_promotion_path, class: 'btn-blue btn-lg pull-left' %></p>
+						<% end %>
+					</div>
 						<br>
   </div>
 
