@@ -12,7 +12,7 @@ class RedemptionsController < ApplicationController
     else
       flash[:error] = "#{@purchase.promotion.title} was already redeemed."
     end
-    redirect_to root_path
+    redirect_to account_show_path
 	end
 
   def show

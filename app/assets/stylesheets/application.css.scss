@@ -14,6 +14,23 @@
  *= require bootstrap-datepicker
 */
 
+#tabs {
+  padding: 0px;
+}
+
+#tabs .ui-widget-header{
+  background: transparent;
+}
+
+#tabs li a {
+    color: white;
+    text-align: center;
+    font-size: 10px;
+    background-color: #014464;
+}
+
+#tabs li a:hover { background: grey; }
+
 
 img {
     height: auto;
