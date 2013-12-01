@@ -9,6 +9,8 @@
   <%= hidden_field_tag 'plan', params[:plan] %>
   <%= f.error_notification %>
   <%= display_base_errors resource %>
+  <div class="row">
+    <div class="col-sm-3">
   <%= f.input :name, label: false, :autofocus => true, placeholder: 'Name' %>
   <%= f.input :email, label: false, :required => true, placeholder: 'Email' %>
   <%= f.input :password, label: false, :required => true, placeholder: 'Password' %>
@@ -16,23 +18,26 @@
   <% if @user.stripe_token %>
     <p>Credit card acceptance is pending.</p>
   <% else %>
-    <div class="field">
-      <%= label_tag :card_number, "Credit Card Number" %>
-      <%= text_field_tag :card_number, nil, name: nil %>
+    <div class="form-control">
+      <%= text_field_tag :card_number, nil, name: nil, placeholder: 'Credit Card Number' %>
     </div>
-    <div class="field">
-      <%= label_tag :card_code, "Card Security Code (CVV)" %>
-      <%= text_field_tag :card_code, nil, name: nil %>
+    <br>
+    <div class="form-control">
+      <%= text_field_tag :card_code, nil, name: nil, placeholder: 'Card Security Code (CVV)' %>
     </div>
-    <div class="field">
-      <%= label_tag :card_month, "Card Expiration" %>
+    <br>
+    <div>
+      <%= label_tag :card_month, "Expires: " %>
       <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"}%>
       <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, id: "card_year"}%>
     </div>
-    <div class="field">
-      <%= f.input :coupon, :label => 'Promotional Coupon (if any)' %>
+    <br>
+    <div>
+      <%= f.input :coupon, label: false, placeholder: 'Promotional Coupon (if any)' %>
     </div>
   <% end %>
   <%= f.hidden_field :stripe_token %>
-  <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>
+  <%= f.button :submit, 'Sign up', :class => 'btn-blue btn-lg' %>
 <% end %>
+</div>
+</div>
