@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
@@ -23,19 +22,28 @@
     <li><a href="#tabs-4">Redemptions</a></li>
   </ul>
   <div id="tabs-1">
-			<h3>Hi <%= @current_user.name %>, it's good to see you again.</h3>
-			<br>
-			<p class="img-rounded img-thumbnail"><%= image_tag(current_user.avatar.thumb.url) %></p>
-			<h4><%= @current_user.name %></h4>
-			<h4><%= @current_user.email %></h4>
-			<h4><%= @current_user.roles.first.name.titleize %></h4>
-			<h4><%= @current_user.last_4_digits %></h4>
-			<p><%= link_to "Edit", edit_user_registration_path , class: 'btn-blue btn-lg pull-left' %></p>
+		<h4>Hi <%= @current_user.name %>, it's good to see you again.</h4>
+		<br>
+		 <div class="row">
+		  <div class="col-sm-2">
+		    <p class="img-rounded img-thumbnail"><%= image_tag(current_user.avatar.thumb.url) %></p>
+		  </div>
+		  <div class="col-sm-3">
+		    <h4><%= @current_user.name %></h4>
+  		<h4><%= @current_user.email %></h4>
+  		<h4><%= @current_user.roles.first.name.titleize %></h4>
+  		<h4><%= @current_user.last_4_digits %></h4>
       <br>
+  		<p><%= link_to "Edit", edit_user_registration_path , class: 'btn-blue btn-lg' %></p>
+		</div>
+	</div>
+    <br>
+    <br>
   </div>
   <div id="tabs-2">
-			<br>
+  	<h4>Select the categories you would like to receive emails about.</h4>
 				<div class="row">
+					<br>
 				  <div class="col-sm-2">
 				    <p align="center"><strong>Entertainment</strong></p>
 				      <div class="switch switch-blue">
@@ -46,7 +54,7 @@
 				        <span class="switch-selection"></span>
 						</div>
 					</div>
-					<div class="col-sm-2 col-sm-offset-3">
+					<div class="col-sm-2">
 				    <p align="center"><strong>Sports</strong></p>
 				      <div class="switch switch-blue">
 				        <input type="radio" class="switch-input" name="view2" value="off2" id="off2" checked>
@@ -68,7 +76,7 @@
 			        <span class="switch-selection"></span>
 						</div>
 					</div>
-					<div class="col-sm-2 col-sm-offset-3">
+					<div class="col-sm-2">
 				    <p align="center"><strong>Food</strong></p>
 				      <div class="switch switch-blue">
 				        <input type="radio" class="switch-input" name="view4" value="off4" id="off4" checked>
@@ -90,7 +98,7 @@
 				        <span class="switch-selection"></span>
 						</div>
 					</div>
-					<div class="col-sm-2 col-sm-offset-3">
+					<div class="col-sm-2">
 				    <p align="center"><strong>Events</strong></p>
 				      <div class="switch switch-blue">
 				        <input type="radio" class="switch-input" name="view6" value="off6" id="off6" checked>
@@ -112,7 +120,7 @@
 				        <span class="switch-selection"></span>
 						</div>
 					</div>
-					<div class="col-sm-2 col-sm-offset-3">
+					<div class="col-sm-2">
 				    <p align="center"><strong>Beauty/Spa</strong></p>
 				      <div class="switch switch-blue">
 				        <input type="radio" class="switch-input" name="view8" value="off8" id="off8" checked>
@@ -134,7 +142,7 @@
 				        <span class="switch-selection"></span>
 						</div>
 					</div>
-					<div class="col-sm-2 col-sm-offset-3">
+					<div class="col-sm-2">
 				    <p align="center"><strong>Health/Fitness</strong></p>
 				      <div class="switch switch-blue">
 				        <input type="radio" class="switch-input" name="view10" value="off10" id="off10" checked>
@@ -156,7 +164,7 @@
 				        <span class="switch-selection"></span>
 						</div>
 					</div>
-					<div class="col-sm-2 col-sm-offset-3">
+					<div class="col-sm-2">
 				    <p align="center"><strong>Shopping</strong></p>
 				      <div class="switch switch-blue">
 				        <input type="radio" class="switch-input" name="view12" value="off12" id="off12" checked>
@@ -171,7 +179,6 @@
         <br>
   </div>
   <div id="tabs-3">
-        <br>
         <h4>You've purchased <%= pluralize(@current_user.purchases.count, 'promotions') %>. Below is a list of promotions you have yet to redeem.</h4>
         <br>
         <div class="container">
@@ -195,7 +202,6 @@
   </div>
 </div>
 </div>
-  <br>
   <div id="tabs-4">
         <h4>You've redeemed <%= pluralize(@current_user.redemptions.count, 'purchases') %></h4>
         <br>
