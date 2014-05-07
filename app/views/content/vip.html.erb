@@ -17,7 +17,7 @@
 <div id="tabs">
   <ul>
     <li><a href="#tabs-1">Profile</a></li>
-    <li><a href="#tabs-2">Preferences</a></li>
+    <li><a href="#tabs-2">Expirations</a></li>
     <li><a href="#tabs-3">Purchases</a></li>
     <li><a href="#tabs-4">Redemptions</a></li>
   </ul>
@@ -41,6 +41,21 @@
     <br>
   </div>
   <div id="tabs-2">
+  	<h4>Unfortunately, the promotions below have expired and are no longer available for use.</h4>
+  	<% @expired_purchases.each do |purchase| %>
+  	<div class="col-sm-2 thumbnail">
+        	<div>
+          <p align="center"><%= purchase.promotion.title %></p>
+          <p align="center"><%= image_tag(purchase.promotion.image_url, class: "img-rounded") %></p>
+          <p align="center"><%= purchase.promotion.expiration %></p>
+          <p align="center">$<%= purchase.promotion.price %></p>
+          <p align="center"><%= image_tag(purchase.promotion.qrcode_url, class: "img-rounded qrcode") %>
+          <br>
+          <br>
+      </div>
+  </div>
+  <% end %>
+ <!--  <div id="tabs-2">
   	<h4>Select the categories you would like to receive emails about.</h4>
 				<div class="row">
 					<br>
@@ -177,7 +192,7 @@
 				</div>
 				<p><%= link_to "Update", "#", class: 'btn-blue btn-lg pull-left' %></p>
         <br>
-  </div>
+  </div> -->
   <div id="tabs-3">
         <h4>You've purchased <%= pluralize(@current_user.purchases.count, 'promotions') %>. Below is a list of promotions you have yet to redeem.</h4>
         <br>

@@ -6,4 +6,8 @@ class Purchase < ActiveRecord::Base
   belongs_to :promotion
 
   has_one :redemption
+
+  def expires_at
+  	promotion.purchase_expiration
+ 	end
 end

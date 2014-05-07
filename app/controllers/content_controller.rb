@@ -15,13 +15,18 @@ class ContentController < ApplicationController
 
   def standard
     authorize! :view, :standard, :message => 'Access limited to Standard Plan subscribers.'
+    @expired_purchases = @current_user.purchases.joins(:promotion).where('promotions.purchase_expiration >= ?', Date.today)
   end
 
   def premium
     authorize! :view, :premium, :message => 'Access limited to Premium Plan subscribers.'
+    @expired_purchases = @current_user.purchases.joins(:promotion).where('promotions.purchase_expiration >= ?', Date.today)
   end
 
   def vip
     authorize! :view, :vip, :message => 'Access limited to V.I.P Plan subscribers.'
+    @expired_purchases = @current_user.purchases.joins(:promotion).where('promotions.purchase_expiration >= ?', Date.today)
+
+
   end
 end
