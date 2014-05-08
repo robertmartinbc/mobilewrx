@@ -365,7 +365,12 @@ input#submitRetrieval.big-orange{
 
 #footer {
   background: #000000;
-  color: #FFFFFF;
+  padding: 0px;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 30px;
 }
 
 #footer a {

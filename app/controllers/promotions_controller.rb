@@ -4,7 +4,7 @@ class PromotionsController < ApplicationController
 
   def index
     @promotions = Promotion.search(params[:search]).paginate(page: params[:page], per_page: 4)
-  	# @promotions = Promotion.active.paginate(page: params[:page], per_page: 4)
+  	@promotions = Promotion.active.paginate(page: params[:page], per_page: 4)
       respond_with do |format|
       format.json { render json: @promotions}
       format.html { render html: @promotions}

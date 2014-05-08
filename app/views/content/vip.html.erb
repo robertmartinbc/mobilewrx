@@ -40,21 +40,6 @@
     <br>
     <br>
   </div>
-  <div id="tabs-2">
-  	<h4>Unfortunately, the promotions below have expired and are no longer available for use.</h4>
-  	<% @expired_purchases.each do |purchase| %>
-  	<div class="col-sm-2 thumbnail">
-        	<div>
-          <p align="center"><%= purchase.promotion.title %></p>
-          <p align="center"><%= image_tag(purchase.promotion.image_url, class: "img-rounded") %></p>
-          <p align="center"><%= purchase.promotion.expiration %></p>
-          <p align="center">$<%= purchase.promotion.price %></p>
-          <p align="center"><%= image_tag(purchase.promotion.qrcode_url, class: "img-rounded qrcode") %>
-          <br>
-          <br>
-      </div>
-  </div>
-  <% end %>
  <!--  <div id="tabs-2">
   	<h4>Select the categories you would like to receive emails about.</h4>
 				<div class="row">
