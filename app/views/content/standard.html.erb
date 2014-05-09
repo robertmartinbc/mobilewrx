@@ -18,9 +18,9 @@
   <ul>
     <li><a href="#tabs-1">Profile</a></li>
     <!-- <li><a href="#tabs-2">Preferences</a></li> -->
-    <li><a href="#tabs-2">Expirations</a></li>
-    <li><a href="#tabs-3">Purchases</a></li>
-    <li><a href="#tabs-4">Redemptions</a></li>
+    <li><a href="#tabs-2">Purchases</a></li>
+    <li><a href="#tabs-3">Redemptions</a></li>
+    <li><a href="#tabs-4">Expirations</a></li>
   </ul>
   <div id="tabs-1">
 		<h4>Hi <%= @current_user.name %>, it's good to see you again.</h4>
@@ -180,9 +180,6 @@
         <br>
   </div> -->
   <div id="tabs-2">
-  	<h4>Unfortunately, the promotions below have expired and are no longer available for use.</h4>
-  </div>
-  <div id="tabs-3">
         <h4>You've purchased <%= pluralize(@current_user.purchases.count, 'promotions') %>. Below is a list of promotions you have yet to redeem.</h4>
         <br>
         <div class="container">
@@ -206,7 +203,7 @@
   </div>
 </div>
 </div>
-  <div id="tabs-4">
+  <div id="tabs-3">
         <h4>You've redeemed <%= pluralize(@current_user.redemptions.count, 'purchases') %></h4>
         <br>
         <div class="container">
@@ -222,10 +219,15 @@
 </div>
         <% end %>
         <br>
+
     </div>
+  </div>
+</div>
+<div id="tabs-4">
+  	<h4>Unfortunately, the promotions below have expired and are no longer available for use.</h4>
   </div>
 </div>
 </div>
 </div>
 </div>
-</div>
+
