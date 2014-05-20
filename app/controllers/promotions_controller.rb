@@ -13,6 +13,10 @@ class PromotionsController < ApplicationController
 
   def show
   	@promotion = Promotion.find(params[:id])
+      respond_with do |format|
+      format.json { render json: @promotion}
+      format.html { render html: @promotion}
+    end
   end
 
   def new
