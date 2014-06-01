@@ -10,7 +10,7 @@ class Api::SessionsController < ApplicationController
 
   def destroy
     sign_out current_user
-    render nothing: true, status: 200
+    render nothing: true , status: 200
   end
 
   private
@@ -21,7 +21,7 @@ class Api::SessionsController < ApplicationController
     end
 
     def load_user
-      @user = User.find_for_database_authentication(email: params[:email])
+      @user = User.find_for_database_authentication(email: session_params[:email])
     end
 
     def invalid_session
@@ -29,10 +29,10 @@ class Api::SessionsController < ApplicationController
     end
 
     def session_params
-      params.require(:sessions)
+      params[:sessions]
     end
 
     def valid_session?
-      @user.try(:valid_password?, params[:password])
+      @user.try(:valid_password?, session_params[:password])
     end
 end
