@@ -1,13 +1,23 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
 
+  respond_to :html, :json
+
   def index
     authorize! :index, @user, :message => 'Not authorized as an administrator.'
     @users = User.all
+    respond_with do |format|
+      format.json { render json: @users }
+      format.html { render html: @users }
+    end
   end
 
   def show
     @user = User.find(params[:id])
+    respond_with do |format|
+      format.json { render json: @user }
+      format.html { render html: @user }
+    end
   end
 
   def update

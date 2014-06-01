@@ -74,6 +74,10 @@ img {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#014464', endColorstr='#014464', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
+
+.btn-blue a {
+  text-decoration: none;
+}
 .btn-blue:hover,
 .btn-blue:active,
 .btn-blue.active,
