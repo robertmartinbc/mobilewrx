@@ -1,2 +1,2 @@
-class Api::Mobile::RegistrationsController < ApplicationController
+class Api::RegistrationsController < ApplicationController
 end
