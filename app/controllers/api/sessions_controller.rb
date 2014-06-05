@@ -21,7 +21,7 @@ class Api::SessionsController < ApplicationController
     end
 
     def load_user
-      @user = User.find_for_database_authentication(email:, sessions_params[:email])
+      @user = User.find_for_database_authentication(email: sessions_params[:email])
     end
 
     def invalid_session
