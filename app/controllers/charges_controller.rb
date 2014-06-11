@@ -1,4 +1,7 @@
 class ChargesController < ApplicationController
+
+        respond_to :html, :json
+
         def new
         end
 
@@ -22,6 +25,10 @@ class ChargesController < ApplicationController
                 flash[:error] = e.message
                 redirect_to charges_path
         end
+        respond_with do |format|
+              format.json { render json: @amount }
+              format.html { render html: @amount }
+      end
 end
 
 # def create
