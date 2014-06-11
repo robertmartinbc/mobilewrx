@@ -1,7 +1,4 @@
 class ChargesController < ApplicationController
-
-        respond_to :html, :json
-
         def new
         end
 
@@ -9,10 +6,6 @@ class ChargesController < ApplicationController
                 @promotion = Promotion.find(params[:promotion_id])
                 # Amount in cents
                 @amount = @promotion.stripe_price
-                respond_with do |format|
-                      format.json { render json: @amount }
-                      format.html { render html: @amount }
-                end
 
                 customer = Stripe::Customer.create(
                         :email => 'example@stripe.com',
